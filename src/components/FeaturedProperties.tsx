@@ -19,7 +19,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 // --- IMPORT SUAS IMAGENS AQUI ---
 //  Smart Pop Maraponga 
-import sala2 from "@/assets/pop-maraponga/SALA_2.jpg";
+
 import biker1Img from '@/assets/pop-maraponga/BIKE.jpg'; // <-- Correto: .jpg
 import churrasqueiraImg from '@/assets/pop-maraponga/CHURRASQUEIRA.jpg'; // <-- Correto: .jpg
 import cozinhaImg from '@/assets/pop-maraponga/COZINHA.jpg';       // <-- Correto: .jpg
@@ -90,7 +90,7 @@ const properties: Property[] = [
     parkingSpaces: 1,
     // Use as variáveis importadas
     images: [
-        sala2,
+
         biker1Img,
         churrasqueiraImg,
         cozinhaImg,
