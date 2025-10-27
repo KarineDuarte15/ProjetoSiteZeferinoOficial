@@ -6,11 +6,10 @@ const AboutMe = () => {
   return (
     <section id="sobre" className="py-20 bg-background">
       <div className="container px-6 md:px-12">
-        {/* 1. MUDANÇA: Usar Grid para layout de 2 colunas */}
+
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
 
-          {/* Coluna 1: Texto */}
-          {/* Ajustamos o alinhamento para a esquerda em telas médias+ */}
+
           <div className="text-center md:text-left">
             <h2 className="font-playfair text-4xl md:text-5xl font-bold text-primary mb-6">
               Minha História
