@@ -9,13 +9,16 @@ const Hero = () => {
   return (
     <section id="inicio" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div className="absolute inset-0 z-0">
+      <div className="relative w-full min-h-screen overflow-hidden bg-cover bg-center flex items-center justify-center pt-24 pb-12"
+      style={{ backgroundImage: `url(${HeroGif})` }}>
+        
         <img 
           src={HeroGif} 
           alt="Luxurious home interior" 
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/60" />
+        <div className="absolute inset-0 bg-black/75" />
+       
       </div>
 
       {/* Content */}
@@ -24,10 +27,10 @@ const Hero = () => {
         <img 
           src={logoCentral} 
           alt="Zeferino Logo Central"
-          className="w-100 md:w-108 mx-auto mb-4"
+          className="w-100 md:w-108 mx-auto mb-0"
         />
         <div className="max-w-4xl mx-auto text-center">
-          <p className="font-playfair text-2xl md:text-4xl font-bold text-white mb-2">
+          <p className="font-playfair text-2xl md:text-4xl font-bold text-white mb-1">
             A chave para seu novo lar está aqui, imóveis exclusivos, com propósito e confiança
           </p>
 
