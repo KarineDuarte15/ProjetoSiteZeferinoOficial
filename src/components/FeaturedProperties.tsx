@@ -19,36 +19,36 @@ import Autoplay from "embla-carousel-autoplay";
 
 // --- IMPORT SUAS IMAGENS AQUI ---
 //  Smart Pop Maraponga 
-import sala2 from "@/assets/Pop-maraponga/SALA_2.jpg";
-import biker1Img from '@/assets/Pop-Maraponga/BIKE.jpg'; // <-- Correto: .jpg
-import churrasqueiraImg from '@/assets/Pop-Maraponga/CHURRASQUEIRA.jpg'; // <-- Correto: .jpg
-import cozinhaImg from '@/assets/Pop-Maraponga/COZINHA.jpg';       // <-- Correto: .jpg
-import deckImg from '@/assets/Pop-Maraponga/DECK.jpg';          // <-- Correto: .jpg
-import fachadaDImg from '@/assets/Pop-Maraponga/FACHADAD.jpg';
+import sala2 from "@/assets/pop-maraponga/SALA_2.jpg";
+import biker1Img from '@/assets/pop-maraponga/BIKE.jpg'; // <-- Correto: .jpg
+import churrasqueiraImg from '@/assets/pop-maraponga/CHURRASQUEIRA.jpg'; // <-- Correto: .jpg
+import cozinhaImg from '@/assets/pop-maraponga/COZINHA.jpg';       // <-- Correto: .jpg
+import deckImg from '@/assets/pop-maraponga/DECK.jpg';          // <-- Correto: .jpg
+import fachadaDImg from '@/assets/pop-maraponga/FACHADAD.jpg';
 import fachadaNImg from '@/assets/Pop-Maraponga/FACHADAN.jpg';
-import fitnessImg from '@/assets/Pop-Maraponga/FITNESS.jpg';
-import playgroundImg from '@/assets/Pop-Maraponga/PLAY.jpg';      
-import piscinaImg from '@/assets/Pop-Maraponga/PISCINA.jpg';
-import guaritaImg from '@/assets/Pop-Maraponga/GUARITA.jpg';
-import salaImg from '@/assets/Pop-Maraponga/SALA.jpg';
-import petImg from '@/assets/Pop-Maraponga/PET.jpg';
-import suiteImg from '@/assets/Pop-Maraponga/SUITE.jpg';
-import topImg from '@/assets/Pop-Maraponga/TOP.jpg';
-import fotoImg from '@/assets/Pop-Maraponga/FOTO.jpg';
+import fitnessImg from '@/assets/pop-maraponga/FITNESS.jpg';
+import playgroundImg from '@/assets/pop-maraponga/PLAY.jpg';      
+import piscinaImg from '@/assets/pop-maraponga/PISCINA.jpg';
+import guaritaImg from '@/assets/pop-maraponga/GUARITA.jpg';
+import salaImg from '@/assets/pop-maraponga/SALA.jpg';
+import petImg from '@/assets/pop-maraponga/PET.jpg';
+import suiteImg from '@/assets/pop-maraponga/SUITE.jpg';
+import topImg from '@/assets/pop-maraponga/TOP.jpg';
+import fotoImg from '@/assets/pop-maraponga/FOTO.jpg';
 // .......................................................
 //  Smart Mansões do lago (Casa)
-import mansoesImg1 from "@/assets/Mansoes-do-lago/Geral001.png";
-import mansoesImg2 from "@/assets/Mansoes-do-lago/Geral002.png";
-import PlantaImg4 from "@/assets/Mansoes-do-lago/Plantas001.jpeg";
-import PlantaImg5 from "@/assets/Mansoes-do-lago/Plantas002.jpeg";
-import mansoesImg6 from "@/assets/Mansoes-do-lago/Unidades001.png";
-import mansoesImg7 from "@/assets/Mansoes-do-lago/Unidades002.png";
-import mansoesImg8 from "@/assets/Mansoes-do-lago/Geral0001.png";
-import mansoesImg9 from "@/assets/Mansoes-do-lago/Areadelazer001.png";
-import mansoesImg10 from "@/assets/Mansoes-do-lago/Areadelazer002.png";
-import mansoesImg11 from "@/assets/Mansoes-do-lago/Areadelazer003.png";
-import mansoesImg12 from "@/assets/Mansoes-do-lago/Areadelazer004.png";
-import mansoesImg13 from "@/assets/Mansoes-do-lago/Areadelazer005.png";
+import mansoesImg1 from "@/assets/mansoes-do-lago/Geral001.png";
+import mansoesImg2 from "@/assets/mansoes-do-lago/Geral002.png";
+import PlantaImg4 from "@/assets/mansoes-do-lago/Plantas001.jpeg";
+import PlantaImg5 from "@/assets/mansoes-do-lago/Plantas002.jpeg";
+import mansoesImg6 from "@/assets/mansoes-do-lago/Unidades001.png";
+import mansoesImg7 from "@/assets/mansoes-do-lago/Unidades002.png";
+import mansoesImg8 from "@/assets/mansoes-do-lago/Geral0001.png";
+import mansoesImg9 from "@/assets/mansoes-do-lago/Areadelazer001.png";
+import mansoesImg10 from "@/assets/mansoes-do-lago/Areadelazer002.png";
+import mansoesImg11 from "@/assets/mansoes-do-lago/Areadelazer003.png";
+import mansoesImg12 from "@/assets/mansoes-do-lago/Areadelazer004.png";
+import mansoesImg13 from "@/assets/mansoes-do-lago/Areadelazer005.png";
 
 // .......................................................
 
