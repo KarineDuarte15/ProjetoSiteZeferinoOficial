@@ -20,21 +20,21 @@ import Autoplay from "embla-carousel-autoplay";
 // --- IMPORT SUAS IMAGENS AQUI ---
 //  Smart Pop Maraponga 
 
-import biker1Img from '@/assets/pop-maraponga/BIKE.jpg'; // <-- Correto: .jpg
-import churrasqueiraImg from '@/assets/pop-maraponga/CHURRASQUEIRA.jpg'; // <-- Correto: .jpg
-import cozinhaImg from '@/assets/pop-maraponga/COZINHA.jpg';       // <-- Correto: .jpg
-import deckImg from '@/assets/pop-maraponga/DECK.jpg';          // <-- Correto: .jpg
-import fachadaDImg from '@/assets/pop-maraponga/FACHADAD.jpg';
-import fachadaNImg from '@/assets/Pop-Maraponga/FACHADAN.jpg';
-import fitnessImg from '@/assets/pop-maraponga/FITNESS.jpg';
-import playgroundImg from '@/assets/pop-maraponga/PLAY.jpg';      
-import piscinaImg from '@/assets/pop-maraponga/PISCINA.jpg';
-import guaritaImg from '@/assets/pop-maraponga/GUARITA.jpg';
-import salaImg from '@/assets/pop-maraponga/SALA.jpg';
-import petImg from '@/assets/pop-maraponga/PET.jpg';
-import suiteImg from '@/assets/pop-maraponga/SUITE.jpg';
-import topImg from '@/assets/pop-maraponga/TOP.jpg';
-import fotoImg from '@/assets/pop-maraponga/FOTO.jpg';
+import biker1Img from '@/assets/pop-maraponga/bike.jpg';
+import churrasqueiraImg from '@/assets/pop-maraponga/churrasqueira.jpg';
+import cozinhaImg from '@/assets/pop-maraponga/cozinha.jpg';
+import deckImg from '@/assets/pop-maraponga/deck.jpg';
+import fachadaDImg from '@/assets/pop-maraponga/fachadad.jpg';
+import fachadaNImg from '@/assets/pop-maraponga/fachadan.jpg';
+import fitnessImg from '@/assets/pop-maraponga/fitness.jpg';
+import playgroundImg from '@/assets/pop-maraponga/play.jpg';
+import piscinaImg from '@/assets/pop-maraponga/piscina.jpg';
+import guaritaImg from '@/assets/pop-maraponga/guarita.jpg';
+import salaImg from '@/assets/pop-maraponga/sala.jpg';
+import petImg from '@/assets/pop-maraponga/pet.jpg';
+import suiteImg from '@/assets/pop-maraponga/suite.jpg';
+import topImg from '@/assets/pop-maraponga/top.jpg';
+import fotoImg from '@/assets/pop-maraponga/foto.jpg';
 // .......................................................
 //  Smart Mansões do lago (Casa)
 import mansoesImg1 from "@/assets/mansoes-do-lago/Geral001.png";
