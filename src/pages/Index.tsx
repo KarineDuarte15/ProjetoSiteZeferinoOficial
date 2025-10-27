@@ -1,91 +1,115 @@
+// src/pages/Index.tsx
 import React, { useState, useEffect } from 'react';
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import PropertyCategories from "@/components/PropertyCategories";
-import FeaturedProperties from "@/components/FeaturedProperties";
+import PropertyCategories from "@/components/PropertyCategories"; 
+import FeaturedProperties from "@/components/FeaturedProperties"; 
+import AboutMe from "@/components/AboutMe";                   
 import InstagramFeed from "@/components/InstagramFeed";
 import Footer from "@/components/Footer";
-import AboutMe from "@/components/AboutMe";
 import ContactModal from "@/components/ContactModal";
-import { MessageCircle } from 'lucide-react';
+import { MessageCircle } from 'lucide-react'; // Ou seu ícone do WhatsApp
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-  // TooltipProvider já está no App.tsx, não precisa aqui
 } from "@/components/ui/tooltip";
+
+// Interface para definir a estrutura dos dados da busca
+interface SearchCriteria {
+  estado?: string;
+  cidade?: string;
+  bairro?: string;
+}
+
+// Interface para as props do Navbar e Footer (para tipagem)
+interface LayoutComponentProps {
+  onContactClick: () => void;
+}
 
 const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [currentSearchCriteria, setCurrentSearchCriteria] = useState<SearchCriteria | undefined>(undefined);
   const [isWhatsappTooltipOpen, setIsWhatsappTooltipOpen] = useState(false);
-  const whatsappNumber = "5585999999999"; // SEU NÚMERO com código do país e DDD
-  const whatsappMessage = "Olá! Gostaria de saber mais sobre os imóveis."; // Mensagem inicial
 
-  // Efeito para abrir o modal na primeira vez que a página carrega
+  // Efeito para tooltip do WhatsApp
   useEffect(() => {
-    // Você pode adicionar lógica aqui para só abrir uma vez por sessão
-    // usando sessionStorage, por exemplo. Por agora, abre sempre.
-    const timer = setTimeout(() => {
-       setIsContactModalOpen(true);
-    }, 1500); // Abre após 1.5 segundos (ajuste se desejar)
+    const tooltipTimer = setTimeout(() => {
+      setIsWhatsappTooltipOpen(true);
+    }, 3000);
+    return () => clearTimeout(tooltipTimer);
+  }, []);
 
-    // Limpa o timer se o componente for desmontado antes
-    return () => clearTimeout(timer);
-  }, []); // Array vazio garante que rode só na montagem inicial
+  
+   useEffect(() => {
+   const timer = setTimeout(() => {
+   setIsContactModalOpen(true);
+   }, 1500);
+   return () => clearTimeout(timer);
+  }, []);
 
-  // Função para fechar o modal
   const handleCloseModal = () => {
     setIsContactModalOpen(false);
+    setCurrentSearchCriteria(undefined);
   };
 
-  // Função para abrir o modal (pode ser passada para botões)
-  const handleOpenModal = () => {
+  const handleOpenModalWithSearch = (criteria?: SearchCriteria) => {
+    setCurrentSearchCriteria(criteria);
     setIsContactModalOpen(true);
   };
 
-  
-  return (
-    <div className="min-h-screen bg-background font-poppins">
-      <Navbar onContactClick={handleOpenModal} />
-      <Hero />
-      <AboutMe />
-      <div className="min-h-screen bg-background font-poppins relative"> {/* Adicione relative aqui se não tiver */}
-      {/* ... (Navbar, Hero, etc) */}
+  const handleOpenModalGeneric = () => {
+     setCurrentSearchCriteria(undefined);
+     setIsContactModalOpen(true);
+  };
 
-      {/* Botão Flutuante do WhatsApp */}
-<Tooltip open={isWhatsappTooltipOpen} onOpenChange={setIsWhatsappTooltipOpen}>
+  const whatsappNumber = "5585999999999"; // Substitua pelo seu número
+  const whatsappMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
+
+  return (
+    // Adicionado 'relative' para o botão flutuante funcionar corretamente
+    <div className="min-h-screen bg-background font-poppins relative">
+
+      {/* 1. Ordem correta dos componentes */}
+      <Navbar onContactClick={handleOpenModalGeneric} />
+      <Hero onSearchSubmit={handleOpenModalWithSearch} />
+      <AboutMe />
+      <PropertyCategories /> 
+      <FeaturedProperties /> 
+      <InstagramFeed />
+      <Footer /> 
+
+      {/* 2. Botão Flutuante WhatsApp */}
+      <Tooltip open={isWhatsappTooltipOpen} onOpenChange={setIsWhatsappTooltipOpen}>
         <TooltipTrigger asChild>
-          {/* O link agora está dentro do TooltipTrigger */}
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
             target="_blank"
             rel="noopener noreferrer"
-            // 3. Estilização do Botão Flutuante (ajustada)
-            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center bg-primary rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 group" // Use flex para centralizar ícone, ajuste tamanho (h-14 w-14)
+            className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center bg-primary rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 group"
             aria-label="Iniciar conversa no WhatsApp"
           >
-            {/* Ícone (Idealmente SVG do WhatsApp) */}
-            <MessageCircle className="h-7 w-7 text-primary-foreground transition-transform duration-300 group-hover:scale-110" /> {/* Ajuste tamanho e adicione animação */}
+            {/* Idealmente, substitua por um SVG do WhatsApp */}
+            <MessageCircle className="h-7 w-7 text-primary-foreground transition-transform duration-300 group-hover:scale-110" />
           </a>
         </TooltipTrigger>
-        {/* 4. Conteúdo do Tooltip */}
         <TooltipContent
-            side="left" // Posiciona à esquerda do botão
+            side="left"
             align="center"
-            sideOffset={10} // Distância do botão
-            className="bg-charcoal text-white rounded-md shadow-lg border-none font-poppins" // Estilo do balão (cor de fundo pode ser ajustada)
-            onPointerDownOutside={(e) => e.preventDefault()} // Evita fechar ao clicar fora
+            sideOffset={10}
+            className="bg-charcoal text-white rounded-md shadow-lg border-none font-poppins" //
+            onPointerDownOutside={(e) => e.preventDefault()}
             >
           Olá, precisa de ajuda?
         </TooltipContent>
       </Tooltip>
 
-      <ContactModal isOpen={isContactModalOpen} onClose={handleCloseModal} />
-    </div>
-      <PropertyCategories />
-      <FeaturedProperties />
-      <InstagramFeed />
-      <Footer />
+      {/* 3. Modal de Contato */}
+      <ContactModal
+        isOpen={isContactModalOpen}
+        onClose={handleCloseModal}
+        searchCriteria={currentSearchCriteria}
+      />
     </div>
   );
 };

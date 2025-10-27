@@ -1,8 +1,8 @@
 // src/components/Hero.tsx
-import React, { useState } from "react"; // Import useState
+import React, { useState } from "react";
 import HeroGif from "@/assets/hero-background.gif";
 import logoCentral from "@/assets/hero-central.png";
-import localidadesData from "@/data/localidades.json"; // Importe o JSON
+import localidadesData from "@/data/localidades.json";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -15,50 +15,70 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// Componente interno do Formulário de Busca (ATUALIZADO com JSON local e seleção dependente)
-const SearchForm = () => {
-  // Estados para controlar as seleções e as opções disponíveis
+// Interface para definir a estrutura dos dados da busca
+interface SearchCriteria {
+  estado?: string;
+  cidade?: string;
+  bairro?: string;
+}
+
+// Interface para as props do SearchForm
+interface SearchFormProps {
+  // Função que será chamada ao submeter a busca
+  onSubmit: (criteria: SearchCriteria) => void;
+}
+
+
+// Componente SearchForm agora recebe a prop onSubmit
+const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSubmit
   const [estadoSelecionado, setEstadoSelecionado] = useState<string | undefined>(undefined);
   const [cidadeSelecionada, setCidadeSelecionada] = useState<string | undefined>(undefined);
   const [bairroSelecionado, setBairroSelecionado] = useState<string | undefined>(undefined);
-
   const [cidadesDisponiveis, setCidadesDisponiveis] = useState<{ nome: string; bairros: string[] }[]>([]);
   const [bairrosDisponiveis, setBairrosDisponiveis] = useState<string[]>([]);
 
-  // Ordena os estados alfabeticamente para o primeiro Select
   const estadosOrdenados = [...localidadesData].sort((a, b) => a.nome.localeCompare(b.nome));
 
-  // Função chamada quando um estado é selecionado
   const handleEstadoChange = (siglaEstado: string) => {
     setEstadoSelecionado(siglaEstado);
     const estado = localidadesData.find(e => e.sigla === siglaEstado);
     const cidades = estado ? estado.cidades.sort((a, b) => a.nome.localeCompare(b.nome)) : [];
     setCidadesDisponiveis(cidades);
-    // Reseta cidade e bairro selecionados e disponíveis
     setCidadeSelecionada(undefined);
     setBairroSelecionado(undefined);
     setBairrosDisponiveis([]);
   };
 
-  // Função chamada quando uma cidade é selecionada
   const handleCidadeChange = (nomeCidade: string) => {
     setCidadeSelecionada(nomeCidade);
     const cidade = cidadesDisponiveis.find(c => c.nome === nomeCidade);
     const bairros = cidade ? [...cidade.bairros].sort((a, b) => a.localeCompare(b)) : [];
     setBairrosDisponiveis(bairros);
-    // Reseta bairro selecionado
     setBairroSelecionado(undefined);
   };
 
+  // Função para lidar com o clique no botão BUSCAR
+  const handleSearchSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
+    event.preventDefault(); // Previne recarregamento da página se estiver dentro de um <form>
+
+    // Encontra o nome completo do estado selecionado para passar ao modal
+     const estadoNome = estadosOrdenados.find(e => e.sigla === estadoSelecionado)?.nome;
+
+    // Chama a função onSubmit passada pelo Index.tsx com os dados
+    onSubmit({
+      estado: estadoNome, // Passa o nome completo do estado
+      cidade: cidadeSelecionada,
+      bairro: bairroSelecionado,
+    });
+  };
+
   return (
-    <div className="flex flex-col gap-6">
+    // Envolvemos em um <form> para semântica, mas prevenimos o submit padrão
+    <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
       <h3 className="text-center font-playfair text-2xl font-bold text-primary">
         Encontre seu imóvel ideal
       </h3>
-
-      {/* Grid para os selects */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-
         {/* Select Estado */}
         <Select onValueChange={handleEstadoChange} value={estadoSelecionado}>
           <SelectTrigger className="h-12 text-base">
@@ -73,11 +93,11 @@ const SearchForm = () => {
           </SelectContent>
         </Select>
 
-        {/* Select Cidade (depende do estado) */}
+        {/* Select Cidade */}
         <Select
           onValueChange={handleCidadeChange}
           value={cidadeSelecionada}
-          disabled={!estadoSelecionado || cidadesDisponiveis.length === 0} // Desabilitado se nenhum estado selecionado ou sem cidades
+          disabled={!estadoSelecionado || cidadesDisponiveis.length === 0}
         >
           <SelectTrigger className="h-12 text-base">
             <SelectValue placeholder="Cidade" />
@@ -91,11 +111,11 @@ const SearchForm = () => {
           </SelectContent>
         </Select>
 
-        {/* Select Bairro (depende da cidade) */}
+        {/* Select Bairro */}
         <Select
-          onValueChange={setBairroSelecionado} // Apenas atualiza o estado do bairro
+          onValueChange={setBairroSelecionado}
           value={bairroSelecionado}
-          disabled={!cidadeSelecionada || bairrosDisponiveis.length === 0} // Desabilitado se nenhuma cidade selecionada ou sem bairros
+          disabled={!cidadeSelecionada || bairrosDisponiveis.length === 0}
         >
           <SelectTrigger className="h-12 text-base">
             <SelectValue placeholder="Bairro" />
@@ -108,27 +128,23 @@ const SearchForm = () => {
             ))}
           </SelectContent>
         </Select>
-
-         {/* Adicione o Select de Tipo de volta se precisar, ajustando o layout */}
-         {/* Exemplo para layout 2x2 em telas pequenas e 4 colunas em médias:
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-               ... (Estado, Cidade, Bairro) ...
-             <Select> ... (Tipo) ... </Select>
-            </div>
-         */}
-
       </div>
 
-      <Button size="lg" className="w-full text-base">
+      {/* Botão BUSCAR agora chama handleSearchSubmit */}
+      <Button size="lg" className="w-full text-base" onClick={handleSearchSubmit}>
         BUSCAR
       </Button>
-    </div>
+    </form>
   );
 };
 
+// Interface para as props do Hero
+interface HeroProps {
+  onSearchSubmit: (criteria: SearchCriteria) => void;
+}
 
-// Componente Hero Principal
-const Hero = () => {
+// Componente Hero Principal - agora recebe onSearchSubmit e passa para SearchForm
+const Hero: React.FC<HeroProps> = ({ onSearchSubmit }) => { // Recebe onSearchSubmit
   return (
     <div
       className="relative w-full min-h-screen overflow-hidden bg-cover bg-center flex items-center justify-center pt-24 pb-12"
@@ -147,11 +163,11 @@ const Hero = () => {
         />
 
         {/* Textos */}
-        <h2 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-          Imóveis Exclusivos, com propósito e confiança.
-        </h2>
+        <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
+          Bem-vindo à Zeferino
+        </h1>
         <p className="font-poppins text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Encontre seu imóvel dos sonhos, feito sob medida para você. Sua jornada para o lar perfeito começa aqui.
+          Imóveis sem burocracia, com propósito e confiança.
         </p>
 
         {/* Card de Busca */}
@@ -160,7 +176,8 @@ const Hero = () => {
             {/* Abas de Filtro */}
             <Tabs defaultValue="comprar" className="w-full">
               <TabsList className="grid w-full grid-cols-3 mb-6 h-auto bg-transparent gap-3">
-                <TabsTrigger
+                 {/* TabsTriggers (sem alterações) */}
+                 <TabsTrigger
                   value="comprar"
                   className="py-2.5 font-montserrat uppercase border-2 border-primary text-primary bg-white shadow-none data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary"
                 >
@@ -180,15 +197,15 @@ const Hero = () => {
                 </TabsTrigger>
               </TabsList>
 
-              {/* Conteúdo das Abas (usando o mesmo formulário) */}
+              {/* Conteúdo das Abas - passa a prop onSubmit para SearchForm */}
               <TabsContent value="comprar">
-                <SearchForm />
+                <SearchForm onSubmit={onSearchSubmit} />
               </TabsContent>
               <TabsContent value="repasse">
-                <SearchForm />
+                <SearchForm onSubmit={onSearchSubmit} />
               </TabsContent>
               <TabsContent value="lancamentos">
-                <SearchForm />
+                <SearchForm onSubmit={onSearchSubmit} />
               </TabsContent>
             </Tabs>
           </CardContent>

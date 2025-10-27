@@ -1,120 +1,324 @@
+// src/components/FeaturedProperties.tsx
+import React from 'react'; // Import React
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Bed, Bath, Square } from "lucide-react";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { Bed, Bath, Square, Home, Car } from "lucide-react";
 
-const properties = [
+
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+  type CarouselApi 
+} from "@/components/ui/carousel";
+// Importar o plugin Autoplay
+import Autoplay from "embla-carousel-autoplay";
+
+// --- IMPORT SUAS IMAGENS AQUI ---
+// Exemplo para Smart Pop Maraponga (ajuste os nomes e adicione o resto)
+import sala2 from "@/assets/Pop-maraponga/SALA_2.jpg";
+import biker1Img from '@/assets/Pop-Maraponga/BIKE.jpg'; // <-- Correto: .jpg
+import churrasqueiraImg from '@/assets/Pop-Maraponga/CHURRASQUEIRA.jpg'; // <-- Correto: .jpg
+import cozinhaImg from '@/assets/Pop-Maraponga/COZINHA.jpg';       // <-- Correto: .jpg
+import deckImg from '@/assets/Pop-Maraponga/DECK.jpg';          // <-- Correto: .jpg
+import fachadaDImg from '@/assets/Pop-Maraponga/FACHADAD.jpg';
+import fachadaNImg from '@/assets/Pop-Maraponga/FACHADAN.jpg';
+// .......................................................
+import { cn } from '@/lib/utils';
+
+
+
+
+
+// ... importe imagens para TODOS os outros empreendimentos ...
+// Exemplo com placeholders para os outros imóveis para o código funcionar:
+const placeholderImage1 = "https://via.placeholder.com/400x300/cccccc/969696?text=Imagem+1";
+const placeholderImage2 = "https://via.placeholder.com/400x300/dddddd/969696?text=Imagem+2";
+const placeholderImage3 = "https://via.placeholder.com/400x300/eeeeee/969696?text=Imagem+3";
+
+
+// Interface para definir a estrutura de um imóvel
+interface Property {
+  id: number;
+  title: string;
+  location: string;
+  bedrooms: number;
+  bathrooms: number;
+  area: string;
+  hasBalcony: boolean;
+  parkingSpaces: number;
+  images: string[]; // Array de strings (caminhos das imagens importadas ou URLs)
+  featured: boolean;
+}
+
+// Array atualizado com os seus empreendimentos e usando imagens importadas
+const properties: Property[] = [
   {
     id: 1,
-    title: "Apartamento Luxury Vista Mar",
-    location: "Barra da Tijuca, Rio de Janeiro",
-    price: "R$ 2.500.000",
-    bedrooms: 4,
-    bathrooms: 3,
-    area: 180,
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=800&h=600&fit=crop",
+    title: "Smart Pop Maraponga",
+    location: "Maraponga",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "42,38 a 662,34m²",
+    hasBalcony: true,
+    parkingSpaces: 1,
+    // Use as variáveis importadas
+    images: [
+        sala2,
+        biker1Img,
+        churrasqueiraImg,
+        cozinhaImg,
+        deckImg,
+        fachadaDImg,
+        fachadaNImg
+    ],
     featured: true
   },
   {
     id: 2,
-    title: "Cobertura Elegance",
-    location: "Leblon, Rio de Janeiro",
-    price: "R$ 4.200.000",
-    bedrooms: 5,
-    bathrooms: 4,
-    area: 250,
-    image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=800&h=600&fit=crop",
+    title: "Mansões do lago (Casa)",
+    location: "Maracanaú",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: "88,68m²",
+    hasBalcony: false,
+    parkingSpaces: 2,
+    // Substitua pelos imports reais ou URLs
+    images: [ placeholderImage1, placeholderImage2 ],
     featured: true
   },
   {
     id: 3,
-    title: "Residência Clássica",
-    location: "Jardim Botânico, Rio de Janeiro",
-    price: "R$ 3.800.000",
-    bedrooms: 4,
-    bathrooms: 4,
-    area: 320,
-    image: "https://images.unsplash.com/photo-1613490493576-7fde63acd811?w=800&h=600&fit=crop",
+    title: "Madri Residence",
+    location: "Eusébio",
+    bedrooms: 3,
+    bathrooms: 2,
+    area: "77,77 a 93,89m²",
+    hasBalcony: true,
+    parkingSpaces: 2,
+     // Substitua pelos imports reais ou URLs
+    images: [ placeholderImage3, placeholderImage1 ],
+    featured: true
+  },
+   {
+    id: 4,
+    title: "Atlântico",
+    location: "Praia do Futuro",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "48,95 a 100,02m²",
+    hasBalcony: true,
+    parkingSpaces: 1,
+    images: [ placeholderImage2, placeholderImage3 ], // Substitua
+    featured: false
+  },
+  {
+    id: 5,
+    title: "Vista Costeira",
+    location: "Cumbuco",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "48,82 a 84,08m²",
+    hasBalcony: true,
+    parkingSpaces: 1,
+    images: [ placeholderImage1, placeholderImage2, placeholderImage3 ], // Substitua
+    featured: false
+  },
+  {
+    id: 6,
+    title: "Vista Mar",
+    location: "Praia do Futuro",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "47,70 a 73,89m²",
+    hasBalcony: true,
+    parkingSpaces: 1,
+    images: [ placeholderImage3, placeholderImage1 ], // Substitua
+    featured: false
+  },
+   {
+    id: 7,
+    title: "Vista Parque",
+    location: "Passaré",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "49,65 a 74,26m²",
+    hasBalcony: true,
+    parkingSpaces: 1,
+    images: [ placeholderImage2, placeholderImage3 ], // Substitua
+    featured: false
+  },
+  {
+    id: 8,
+    title: "Vitória Acácia",
+    location: "Messejana",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: "38,08 a 58,94m²",
+    hasBalcony: false,
+    parkingSpaces: 1,
+    images: [ placeholderImage1, placeholderImage2 ], // Substitua
+    featured: false
+  },
+   {
+    id: 9,
+    title: "Vitória Eusébio",
+    location: "Eusébio",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: "40,02 a 60,37m²",
+    hasBalcony: false,
+    parkingSpaces: 1,
+    images: [ placeholderImage3, placeholderImage1 ], // Substitua
+    featured: false
+  },
+  {
+    id: 10,
+    title: "Vitória Isis",
+    location: "Messejana",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: "40,02 a 63,47m²",
+    hasBalcony: false,
+    parkingSpaces: 1,
+    images: [ placeholderImage2, placeholderImage3, placeholderImage1 ], // Substitua
+    featured: false
+  },
+   {
+    id: 11,
+    title: "Vitória Maracanaú",
+    location: "Maracanaú",
+    bedrooms: 2,
+    bathrooms: 1,
+    area: "38,08 a 58,21m²",
+    hasBalcony: false,
+    parkingSpaces: 1,
+    images: [ placeholderImage1, placeholderImage2 ], // Substitua
     featured: false
   }
 ];
 
-const FeaturedProperties = () => {
-  return (
-    <section id="imoveis" className="py-20 bg-background">
-      <div className="container px-6 md:px-12">
-        <div className="text-center mb-16">
-          <h2 className="font-playfair text-4xl md:text-5xl font-bold text-primary mb-4">
-            Imóveis em Destaque
-          </h2>
-          <p className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto">
-            Seleção exclusiva de propriedades que combinam sofisticação, conforto e localização privilegiada.
-          </p>
-        </div>
+const FeaturedProperties: React.FC = () => {
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {properties.map((property) => (
-            <Card 
-              key={property.id} 
-              className="overflow-hidden border-0 shadow-lg hover:shadow-xl transition-all duration-300 group"
-            >
-              <div className="relative overflow-hidden">
-                <img 
-                  src={property.image} 
-                  alt={property.title}
-                  className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                {property.featured && (
-                  <Badge className="absolute top-4 right-4 bg-accent text-accent-foreground">
-                    Destaque
-                  </Badge>
-                )}
-              </div>
-              
-              <CardContent className="p-6">
-                <h3 className="font-playfair text-2xl font-bold text-primary mb-2">
-                  {property.title}
-                </h3>
-                <p className="font-poppins text-muted-foreground mb-4">
-                  {property.location}
-                </p>
-                
-                <div className="flex items-center gap-4 mb-4 text-sm text-muted-foreground">
-                  <div className="flex items-center gap-1">
-                    <Bed className="w-4 h-4 text-accent" />
-                    <span>{property.bedrooms}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Bath className="w-4 h-4 text-accent" />
-                    <span>{property.bathrooms}</span>
-                  </div>
-                  <div className="flex items-center gap-1">
-                    <Square className="w-4 h-4 text-accent" />
-                    <span>{property.area}m²</span>
-                  </div>
-                </div>
-                
-                <div className="flex items-center justify-between">
-                  <p className="font-playfair text-2xl font-bold text-primary">
-                    {property.price}
-                  </p>
-                  <Button variant="outline" size="sm">
-                    Ver Detalhes
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
-
-        <div className="text-center mt-12">
-          <Button size="lg" variant="outline">
-            Ver Todos os Imóveis
-          </Button>
-        </div>
-      </div>
-    </section>
+  // Hook para referência do plugin Autoplay (um para todos os carrosseis internos)
+  // Se quiser que cada um tenha um controle independente, mova isso para dentro do map
+  const autoplayPlugin = React.useRef(
+    Autoplay({ delay: 3000, stopOnInteraction: true, stopOnMouseEnter: true })
   );
+  const whatsappNumber = "5585996409590"; 
+
+  return (
+      <section id="imoveis" className="py-20 bg-background">
+        <div className="container px-6 md:px-12">
+          {/* Título e Descrição */}
+          <div className="text-center mb-16">
+            <h2 className="font-playfair text-4xl md:text-5xl font-bold text-primary mb-4">
+              Imóveis em Destaque
+            </h2>
+            <p className="font-poppins text-lg text-muted-foreground max-w-2xl mx-auto">
+              Seleção exclusiva de propriedades para você encontrar o seu lar ideal.
+            </p>
+          </div>
+
+          {/* Carrossel Principal */}
+          <Carousel
+            opts={{ align: "start", loop: properties.length > 2 }}
+            className="w-full max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl mx-auto"
+          >
+            <CarouselContent className="-ml-4">
+              {properties.map((property) => {
+                // 5. Construir a mensagem do WhatsApp para este imóvel
+                let message = `Gostaria de saber mais sobre o ${property.title}\n`;
+                message += `${property.location}\n\n`; // Adiciona localização e linha extra
+                message += `${property.bedrooms} Quarto(s)\n`;
+                message += `${property.bathrooms} Banheiro(s)\n`;
+                message += `${property.area}\n`;
+                if (property.hasBalcony) {
+                  message += `Varanda\n`;
+                }
+                message += `${property.parkingSpaces} Vaga(s)`;
+
+                // 6. Criar a URL do WhatsApp
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+
+                return (
+                  <CarouselItem key={property.id} className="pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <div className="p-1 h-full">
+                      <Card className="overflow-hidden border bg-card text-card-foreground shadow-lg group flex flex-col h-full">
+                        {/* Carrossel Aninhado (Imagens) */}
+                        <div className="relative overflow-hidden">
+                          <Carousel
+                            plugins={[autoplayPlugin.current]}
+                            opts={{ loop: property.images.length > 1 }}
+                            className="w-full"
+                          >
+                            <CarouselContent>
+                              {property.images.map((imgSrc, imgIndex) => (
+                                <CarouselItem key={imgIndex}>
+                                  <img
+                                    src={imgSrc}
+                                    alt={`${property.title} - Imagem ${imgIndex + 1}`}
+                                    className="w-full h-56 object-cover block"
+                                  />
+                                </CarouselItem>
+                              ))}
+                            </CarouselContent>
+                            {property.images.length > 1 && (
+                              <>
+                                <CarouselPrevious className="absolute left-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-10 h-8 w-8 bg-white/70 hover:bg-white text-primary" />
+                                <CarouselNext className="absolute right-2 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity z-10 h-8 w-8 bg-white/70 hover:bg-white text-primary" />
+                              </>
+                            )}
+                          </Carousel>
+                          {property.featured && (
+                            <Badge className="absolute top-3 right-3 z-10 bg-accent text-accent-foreground shadow">
+                              Destaque
+                            </Badge>
+                          )}
+                        </div>
+
+                        {/* Conteúdo do Card */}
+                        <CardContent className="p-5 flex flex-col flex-grow">
+                          {/* Título, Localização, Ícones */}
+                          <h3 className="font-playfair text-xl font-bold text-primary mb-1"> {property.title} </h3>
+                          <p className="font-poppins text-sm text-muted-foreground mb-3"> {property.location} </p>
+                          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-muted-foreground mb-4">
+                            <div className="flex items-center gap-1"><Bed className="w-3.5 h-3.5 text-accent" /><span>{property.bedrooms} Quarto(s)</span></div>
+                            <div className="flex items-center gap-1"><Bath className="w-3.5 h-3.5 text-accent" /><span>{property.bathrooms} Banheiro(s)</span></div>
+                            <div className="flex items-center gap-1"><Square className="w-3.5 h-3.5 text-accent" /><span>{property.area}</span></div>
+                            {property.hasBalcony && (<div className="flex items-center gap-1"><Home className="w-3.5 h-3.5 text-accent" /><span>Varanda</span></div>)}
+                            <div className="flex items-center gap-1"><Car className="w-3.5 h-3.5 text-accent" /><span>{property.parkingSpaces} Vaga(s)</span></div>
+                          </div>
+
+                          {/* 7. Botão agora é um Link (<a>) estilizado */}
+                          <div className="mt-auto pt-4 flex justify-end">
+                            <a
+                              href={whatsappUrl} // Usa a URL gerada
+                              target="_blank" // Abre em nova aba
+                              rel="noopener noreferrer"
+                              // Aplica estilos de botão usando buttonVariants
+                              className={cn(buttonVariants({ variant: "outline", size: "sm" }))}
+                            >
+                              Saiba Mais
+                            </a>
+                          </div>
+                        </CardContent>
+                      </Card>
+                    </div>
+                  </CarouselItem>
+                );
+              })}
+            </CarouselContent>
+            {/* Controles do Carrossel Principal */}
+            <CarouselPrevious className="absolute left-[-50px] top-1/2 -translate-y-1/2 hidden sm:flex" />
+            <CarouselNext className="absolute right-[-50px] top-1/2 -translate-y-1/2 hidden sm:flex" />
+          </Carousel>
+        </div>
+      </section>
+    );
 };
 
 export default FeaturedProperties;
