@@ -30,11 +30,9 @@ const AboutMe = () => {
              {/* Elemento decorativo de fundo (opcional) */}
              <div className="absolute w-48 h-48 bg-secondary/20 rounded-full -bottom-8 -left-8 -z-10 opacity-50 hidden md:block"></div>
             <img
-              src={MinhaFoto} // <-- Usar a imagem importada
-              alt="Foto de Liliana" // <-- Altere o Alt Text
-              // 2. MUDANÇA: Ajustes na imagem
-              // max-w-sm limita o tamanho, rounded-lg adiciona bordas arredondadas
-              // object-contain garante que a imagem inteira apareça
+              src={MinhaFoto} 
+              alt="Foto de Liliana" 
+
               className="rounded-lg shadow-lg max-w-sm w-full h-auto object-contain mx-auto"
             />
           </div>
