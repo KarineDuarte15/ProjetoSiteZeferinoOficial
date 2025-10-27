@@ -3,7 +3,7 @@ import React from 'react'; // Import React
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
-import { Bed, Bath, Square, Home, Car } from "lucide-react";
+import { Bed, Bath, Square, Home, Car, Import } from "lucide-react";
 
 
 import {
@@ -18,7 +18,7 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 
 // --- IMPORT SUAS IMAGENS AQUI ---
-// Exemplo para Smart Pop Maraponga (ajuste os nomes e adicione o resto)
+//  Smart Pop Maraponga 
 import sala2 from "@/assets/Pop-maraponga/SALA_2.jpg";
 import biker1Img from '@/assets/Pop-Maraponga/BIKE.jpg'; // <-- Correto: .jpg
 import churrasqueiraImg from '@/assets/Pop-Maraponga/CHURRASQUEIRA.jpg'; // <-- Correto: .jpg
@@ -26,18 +26,40 @@ import cozinhaImg from '@/assets/Pop-Maraponga/COZINHA.jpg';       // <-- Corret
 import deckImg from '@/assets/Pop-Maraponga/DECK.jpg';          // <-- Correto: .jpg
 import fachadaDImg from '@/assets/Pop-Maraponga/FACHADAD.jpg';
 import fachadaNImg from '@/assets/Pop-Maraponga/FACHADAN.jpg';
+import fitnessImg from '@/assets/Pop-Maraponga/FITNESS.jpg';
+import playgroundImg from '@/assets/Pop-Maraponga/PLAY.jpg';      
+import piscinaImg from '@/assets/Pop-Maraponga/PISCINA.jpg';
+import guaritaImg from '@/assets/Pop-Maraponga/GUARITA.jpg';
+import salaImg from '@/assets/Pop-Maraponga/SALA.jpg';
+import petImg from '@/assets/Pop-Maraponga/PET.jpg';
+import suiteImg from '@/assets/Pop-Maraponga/SUITE.jpg';
+import topImg from '@/assets/Pop-Maraponga/TOP.jpg';
+import fotoImg from '@/assets/Pop-Maraponga/FOTO.jpg';
 // .......................................................
+//  Smart Mansões do lago (Casa)
+import mansoesImg1 from "@/assets/Mansoes-do-lago/Geral001.png";
+import mansoesImg2 from "@/assets/Mansoes-do-lago/Geral002.png";
+import PlantaImg4 from "@/assets/Mansoes-do-lago/Plantas001.jpeg";
+import PlantaImg5 from "@/assets/Mansoes-do-lago/Plantas002.jpeg";
+import mansoesImg6 from "@/assets/Mansoes-do-lago/Unidades001.png";
+import mansoesImg7 from "@/assets/Mansoes-do-lago/Unidades002.png";
+import mansoesImg8 from "@/assets/Mansoes-do-lago/Geral0001.png";
+import mansoesImg9 from "@/assets/Mansoes-do-lago/Areadelazer001.png";
+import mansoesImg10 from "@/assets/Mansoes-do-lago/Areadelazer002.png";
+import mansoesImg11 from "@/assets/Mansoes-do-lago/Areadelazer003.png";
+import mansoesImg12 from "@/assets/Mansoes-do-lago/Areadelazer004.png";
+import mansoesImg13 from "@/assets/Mansoes-do-lago/Areadelazer005.png";
+
+// .......................................................
+
+
 import { cn } from '@/lib/utils';
 
 
 
 
 
-// ... importe imagens para TODOS os outros empreendimentos ...
-// Exemplo com placeholders para os outros imóveis para o código funcionar:
-const placeholderImage1 = "https://via.placeholder.com/400x300/cccccc/969696?text=Imagem+1";
-const placeholderImage2 = "https://via.placeholder.com/400x300/dddddd/969696?text=Imagem+2";
-const placeholderImage3 = "https://via.placeholder.com/400x300/eeeeee/969696?text=Imagem+3";
+
 
 
 // Interface para definir a estrutura de um imóvel
@@ -74,6 +96,15 @@ const properties: Property[] = [
         deckImg,
         fachadaDImg,
         fachadaNImg
+        ,fitnessImg,
+        playgroundImg,
+        piscinaImg,
+        guaritaImg,
+        salaImg,
+        petImg,
+        suiteImg,
+        topImg,
+        fotoImg
     ],
     featured: true
   },
@@ -87,7 +118,20 @@ const properties: Property[] = [
     hasBalcony: false,
     parkingSpaces: 2,
     // Substitua pelos imports reais ou URLs
-    images: [ placeholderImage1, placeholderImage2 ],
+    images: [ 
+      mansoesImg1, 
+      mansoesImg2
+      ,PlantaImg4
+      ,PlantaImg5
+      ,mansoesImg6
+      ,mansoesImg7
+      ,mansoesImg8
+      ,mansoesImg9
+      ,mansoesImg10
+      ,mansoesImg11
+      ,mansoesImg12
+      ,mansoesImg13
+     ],
     featured: true
   },
   {
@@ -100,7 +144,9 @@ const properties: Property[] = [
     hasBalcony: true,
     parkingSpaces: 2,
      // Substitua pelos imports reais ou URLs
-    images: [ placeholderImage3, placeholderImage1 ],
+    images: [
+      mansoesImg1
+    ],
     featured: true
   },
    {
@@ -112,7 +158,9 @@ const properties: Property[] = [
     area: "48,95 a 100,02m²",
     hasBalcony: true,
     parkingSpaces: 1,
-    images: [ placeholderImage2, placeholderImage3 ], // Substitua
+    images: [
+      mansoesImg1
+    ],
     featured: false
   },
   {
@@ -124,7 +172,7 @@ const properties: Property[] = [
     area: "48,82 a 84,08m²",
     hasBalcony: true,
     parkingSpaces: 1,
-    images: [ placeholderImage1, placeholderImage2, placeholderImage3 ], // Substitua
+    images: [ mansoesImg2 ], // Substitua
     featured: false
   },
   {
@@ -136,7 +184,9 @@ const properties: Property[] = [
     area: "47,70 a 73,89m²",
     hasBalcony: true,
     parkingSpaces: 1,
-    images: [ placeholderImage3, placeholderImage1 ], // Substitua
+     images: [
+      mansoesImg1
+    ],
     featured: false
   },
    {
@@ -148,7 +198,9 @@ const properties: Property[] = [
     area: "49,65 a 74,26m²",
     hasBalcony: true,
     parkingSpaces: 1,
-    images: [ placeholderImage2, placeholderImage3 ], // Substitua
+    images: [
+      mansoesImg1
+    ],
     featured: false
   },
   {
@@ -160,7 +212,9 @@ const properties: Property[] = [
     area: "38,08 a 58,94m²",
     hasBalcony: false,
     parkingSpaces: 1,
-    images: [ placeholderImage1, placeholderImage2 ], // Substitua
+     images: [
+      mansoesImg1
+    ],
     featured: false
   },
    {
@@ -172,7 +226,9 @@ const properties: Property[] = [
     area: "40,02 a 60,37m²",
     hasBalcony: false,
     parkingSpaces: 1,
-    images: [ placeholderImage3, placeholderImage1 ], // Substitua
+    images: [
+      mansoesImg1
+    ],
     featured: false
   },
   {
@@ -184,7 +240,9 @@ const properties: Property[] = [
     area: "40,02 a 63,47m²",
     hasBalcony: false,
     parkingSpaces: 1,
-    images: [ placeholderImage2, placeholderImage3, placeholderImage1 ], // Substitua
+    images: [
+      mansoesImg1
+    ],
     featured: false
   },
    {
@@ -196,7 +254,9 @@ const properties: Property[] = [
     area: "38,08 a 58,21m²",
     hasBalcony: false,
     parkingSpaces: 1,
-    images: [ placeholderImage1, placeholderImage2 ], // Substitua
+     images: [
+      mansoesImg1
+    ],
     featured: false
   }
 ];

@@ -5,49 +5,58 @@
     "cidades": [
       {
         "nome": "Fortaleza",
-        "bairros": ["Aldeota", "Meireles", "Mucuripe", "Praia de Iracema", "Varjota"]
-      },
-      {
-        "nome": "Caucaia",
-        "bairros": ["Icaraí", "Cumbuco", "Centro"]
+        "bairros": [
+          "Aldeota", "Meireles", "Praia de Iracema", "Varjota", "Mucuripe", "Centro", "Papicu", "Cidade 2000",
+          "Tauape", "Benfica", "Parquelândia", "Montese", "Vila União", "Cais do Porto", "José Bonifácio",
+          "Jardim América", "Bom Futuro", "Jacarecanga", "Jardim Iracema", "Jardim Guanabara", "Vicente Pinzón",
+          "Cristo Redentor", "Antônio Bezerra", "Quintino Cunha", "Vila Velha", "Jardim das Oliveiras",
+          "Engenheiro Luciano Cavalcante", "Sapiranga", "Edson Queiroz", "Granja Portugal", "Bom Jardim",
+          "João XXIII", "Canindezinho", "Mondubim", "Passaré", "Dias Macedo", "Serrinha", "Parangaba", "Itaperi",
+          "Cajazeiras", "Ancuri", "Parque Dois Irmãos", "Boa Vista", "Manuel Sátiro", "Siqueira", "Monte Castelo",
+          "Carlito Pamplona", "Ellery", "São Gerardo", "Rodolf Teófilo", "Amadeu Furtado", "Farias Brito",
+          "Pici", "Demócrito Rocha", "Jóquei Clube", "Dom Lustosa", "João XXIII", "Bonsucesso", "Granja Lisboa",
+          "Parque Presidente Vargas", "Parque Santa Rosa", "Parque São José"
+        ]
       },
       {
         "nome": "Maracanaú",
-        "bairros": ["Centro", "Jereissati I", "Pajuçara"]
-      }
-    ]
-  },
-  {
-    "sigla": "RJ",
-    "nome": "Rio de Janeiro",
-    "cidades": [
-      {
-        "nome": "Rio de Janeiro",
-        "bairros": ["Leblon", "Ipanema", "Barra da Tijuca", "Copacabana", "Recreio dos Bandeirantes"]
+        "bairros": [
+          "Acaracuzinho", "Alto Alegre", "Alto da Mangueira", "Antônio Justa", "Boa Esperança", "Boa Vista",
+          "Cágado", "Coqueiral", "Centro", "Cidade Nova", "Distrito Industrial I", "Furna da Onça", "Horto", "Industrial",
+          "Jaçanaú", "Jardim Bandeirantes", "Jari", "Jenipapeiro", "Jereissati", "Luzardo Viana", "Menino Jesus de Praga",
+          "Mucunã", "Novo Jenipapeiro", "Novo Maracanaú", "Novo Oriente", "Olho D’Água", "Pajuçara", "Pajuçara Park",
+          "Pau-Serrado", "Parque Tijuca", "Parque Tropical", "Parque Santa Maria", "Piratininga", "Santo Antônio",
+          "Santo Sátiro", "Senador José Afonso Sancho", "Siqueira", "Timbó"
+        ]
       },
       {
-        "nome": "Niterói",
-        "bairros": ["Icaraí", "Santa Rosa", "Centro"]
-      }
-    ]
-  },
-  {
-    "sigla": "SP",
-    "nome": "São Paulo",
-    "cidades": [
-      {
-        "nome": "São Paulo",
-        "bairros": ["Jardins", "Pinheiros", "Vila Madalena", "Itaim Bibi", "Moema"]
+        "nome": "Horizonte",
+        "bairros": [
+          "Centro", "Diadema", "Dourado", "Distrito Industrial", "Francisca Barbosa", "Horizonte Novo",
+          "Juca Leão", "Mangueiral", "Parque Leblon", "Queimados", "Sanharão", "Vila do IAPC", "Vila São Francisco"
+        ]
       },
       {
-        "nome": "Campinas",
-        "bairros": ["Cambuí", "Centro", "Taquaral"]
+        "nome": "Eusébio",
+        "bairros": [
+          "Centro", "Precabura", "Coité", "Guaribas", "Mangangá", "Murutinga", "Olho D'Água", "Pedra", "Carine",
+          "Lagoinha", "Camarão", "Santo Antônio", "Timbu", "Tamatanduba", "Autódromo", "Jabuti"
+        ]
       },
       {
-        "nome": "Guarulhos",
-        "bairros": ["Centro", "Macedo", "Vila Galvão"]
+        "nome": "Itaitinga",
+        "bairros": [
+          "Centro", "Coqueiral", "Curicaca", "Jardim das Oliveiras", "Olho D'Água", "Parque Genezaré",
+          "Parque Patu", "Praia", "Sítio Novo", "Timbaúba", "Valparaíso"
+        ]
+      },
+      {
+        "nome": "Caucaia",
+        "bairros": [
+          "Centro", "Icaraí", "Cumbuco", "Jurema", "Parque Soledade", "Arianópolis", "Marechal Rondon",
+          "Nova Metrópole", "Tabapuá", "Potira", "Guajiru", "Urucutuba", "Capuan", "Lagoa do Barro", "Sítios Novos"
+        ]
       }
     ]
   }
-  
 ]
