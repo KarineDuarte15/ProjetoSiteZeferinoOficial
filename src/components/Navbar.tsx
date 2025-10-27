@@ -3,10 +3,23 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-import logoHeader from "@/assets/logoheader.png"; 
+import logoHeader from "@/assets/logoheader.png";
+interface NavbarProps { // Adicione esta interface
+  onContactClick: () => void;
+} 
 
-const Navbar = () => {
+const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   const [isOpen, setIsOpen] = useState(false);
+  <a
+        key="Contato"
+        href="#contato" // Pode manter o href para fallback
+        onClick={(e) => { e.preventDefault(); onContactClick(); }} // Chama a função ao clicar
+        className="..."
+      >
+        Contato
+      </a>
+      
+  
 
   const navLinks = [
     { name: "Início", href: "#inicio" },

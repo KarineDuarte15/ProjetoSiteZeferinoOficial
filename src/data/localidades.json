@@ -1,0 +1,53 @@
+[
+  {
+    "sigla": "CE",
+    "nome": "Ceará",
+    "cidades": [
+      {
+        "nome": "Fortaleza",
+        "bairros": ["Aldeota", "Meireles", "Mucuripe", "Praia de Iracema", "Varjota"]
+      },
+      {
+        "nome": "Caucaia",
+        "bairros": ["Icaraí", "Cumbuco", "Centro"]
+      },
+      {
+        "nome": "Maracanaú",
+        "bairros": ["Centro", "Jereissati I", "Pajuçara"]
+      }
+    ]
+  },
+  {
+    "sigla": "RJ",
+    "nome": "Rio de Janeiro",
+    "cidades": [
+      {
+        "nome": "Rio de Janeiro",
+        "bairros": ["Leblon", "Ipanema", "Barra da Tijuca", "Copacabana", "Recreio dos Bandeirantes"]
+      },
+      {
+        "nome": "Niterói",
+        "bairros": ["Icaraí", "Santa Rosa", "Centro"]
+      }
+    ]
+  },
+  {
+    "sigla": "SP",
+    "nome": "São Paulo",
+    "cidades": [
+      {
+        "nome": "São Paulo",
+        "bairros": ["Jardins", "Pinheiros", "Vila Madalena", "Itaim Bibi", "Moema"]
+      },
+      {
+        "nome": "Campinas",
+        "bairros": ["Cambuí", "Centro", "Taquaral"]
+      },
+      {
+        "nome": "Guarulhos",
+        "bairros": ["Centro", "Macedo", "Vila Galvão"]
+      }
+    ]
+  }
+  
+]

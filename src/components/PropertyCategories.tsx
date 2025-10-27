@@ -35,7 +35,7 @@ const categories = [
 
 const PropertyCategories = () => {
   return (
-    <section className="py-20 bg-background">
+    <section className="py-5 bg-background">
       <div className="container px-6 md:px-12">
         <div className="text-center mb-16">
           <p className="font-poppins text-sm uppercase tracking-widest text-accent mb-2">
