@@ -1,11 +1,11 @@
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import insta1 from '@/assets/instagram/insta1.jpg';
-import insta2 from '@/assets/instagram/insta2.jpg';
-import insta3 from '@/assets/instagram/insta3.jpg';
-import insta4 from '@/assets/instagram/insta4.jpg';
-import insta5 from '@/assets/instagram/insta5.jpg';
-import insta6 from '@/assets/instagram/insta6.jpg';
+import insta1 from '@/assets/instagram/insta1.png';
+import insta2 from '@/assets/instagram/insta2.png';
+import insta3 from '@/assets/instagram/insta3.png';
+import insta4 from '@/assets/instagram/insta4.png';
+import insta5 from '@/assets/instagram/insta5.png';
+import insta6 from '@/assets/instagram/insta6.png';
 
 const InstagramFeed = () => {
   // Posts em destaque - podem ser substituídos por dados reais da API do Instagram
@@ -14,32 +14,32 @@ const InstagramFeed = () => {
   const featuredPosts = [
     {
       id: 1,
-      image: "https://www.instagram.com/p/DC4A13ZuIk9/",
+      image: insta1,
       alt: "inst1agram post",
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=400&h=400&fit=crop",
+      image: insta2,
       alt: "Interior elegante",
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=400&h=400&fit=crop",
+      image: insta3,
       alt: "Apartamento de luxo",
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&h=400&fit=crop",
+      image: insta4,
       alt: "Sala de estar sofisticada",
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=400&h=400&fit=crop",
+      image: insta5,
       alt: "Quarto moderno",
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?w=400&h=400&fit=crop",
+      image: insta6,
       alt: "Cozinha contemporânea",
     },
   ];
@@ -65,7 +65,7 @@ const InstagramFeed = () => {
               rel="noopener noreferrer"
             >
               <Instagram className="w-5 h-5" />
-              @zeferino
+              @Lilianacorretora
             </a>
           </Button>
         </div>
