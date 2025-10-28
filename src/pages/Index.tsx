@@ -33,6 +33,7 @@ const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [currentSearchCriteria, setCurrentSearchCriteria] = useState<SearchCriteria | undefined>(undefined);
   const [isWhatsappTooltipOpen, setIsWhatsappTooltipOpen] = useState(false);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   // Efeito para tooltip do WhatsApp
   useEffect(() => {
@@ -65,7 +66,7 @@ const Index = () => {
      setIsContactModalOpen(true);
   };
 
-  const whatsappNumber = "5585999999999"; // Substitua pelo seu número
+  const whatsappNumber = "5585996409590"; 
   const whatsappMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
 
   return (
@@ -76,8 +77,18 @@ const Index = () => {
       <Navbar onContactClick={handleOpenModalGeneric} />
       <Hero onSearchSubmit={handleOpenModalWithSearch} />
       <AboutMe />
-      <PropertyCategories /> 
-      <FeaturedProperties /> 
+      <PropertyCategories
+        selectedCategory={selectedCategory}     
+        onCategorySelect={setSelectedCategory}
+      /> 
+      {(() => {
+        const C: React.ComponentType<{ selectedCategory: string | null }> = FeaturedProperties;
+        return (
+          <C
+            selectedCategory={selectedCategory}
+          />
+        );
+      })()}
       <Testimonials />
       <Events />
       <InstagramFeed />
