@@ -8,7 +8,7 @@ import AboutMe from "@/components/AboutMe";
 import InstagramFeed from "@/components/InstagramFeed";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
-import { MessageCircle } from 'lucide-react'; // Ou seu ícone do WhatsApp
+import { MessageCircle, X, Send} from 'lucide-react'; // Ou seu ícone do WhatsApp
 import Testimonials from "@/components/Testimonials";
 import Events from "@/components/Events";
 import {
@@ -16,6 +16,14 @@ import {
   TooltipContent,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+}from "@/components/ui/popover";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from '@/components/ui/button';
 
 // Interface para definir a estrutura dos dados da busca
 interface SearchCriteria {
@@ -29,19 +37,22 @@ interface LayoutComponentProps {
   onContactClick: () => void;
 }
 
+const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    fill="currentColor" // Isso fará com que ele pegue a cor do texto (text-primary-foreground)
+    {...props}
+  >
+    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.598-3.84-1.598-5.946C.146 5.334 5.414 0 12.041 0c6.627 0 11.896 5.334 11.896 11.912 0 6.577-5.269 11.912-11.896 11.912-1.99 0-3.866-.51-5.597-1.428L.057 24zM12.041 1.913c-5.521 0-9.99 4.48-9.99 9.998 0 2.01.571 3.897 1.6 5.53l-.387 1.416 1.442-.382a9.922 9.922 0 0 0 5.331 1.6c5.521 0 9.99-4.48 9.99-9.998s-4.469-9.998-9.99-9.998zm-2.858 13.39c-.492-.246-2.899-1.428-3.347-1.586-.447-.158-.772-.246-.997.246-.224.492-.857 1.586-1.048 1.912-.191.326-.382.368-.707.208-.326-.158-1.371-.51-2.609-1.613a9.23 9.23 0 0 1-1.816-2.22c-.191-.326-.03-.492.117-.65 1.058-.954 1.176-1.111 1.325-1.488.149-.368.074-.613-.037-.859-.111-.246-.997-2.411-1.365-3.312-.358-.881-.724-.759-.997-.775-.264-.016-.589-.016-.914-.016-.326 0-.857.117-1.305.589-.447.472-1.719 1.666-1.719 4.062 0 2.396 1.756 4.708 1.992 4.997.236.289 3.435 5.251 8.356 7.376 1.19.51 2.162.815 2.899 1.048.736.236 1.416.208 1.956.125.59-.083 1.756-1.048 2.03-2.062.273-1.015.273-1.874.191-2.062-.083-.188-.326-.289-.707-.535z" />
+  </svg>
+);
+
 const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
   const [currentSearchCriteria, setCurrentSearchCriteria] = useState<SearchCriteria | undefined>(undefined);
-  const [isWhatsappTooltipOpen, setIsWhatsappTooltipOpen] = useState(false);
-  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
-  // Efeito para tooltip do WhatsApp
-  useEffect(() => {
-    const tooltipTimer = setTimeout(() => {
-      setIsWhatsappTooltipOpen(true);
-    }, 3000);
-    return () => clearTimeout(tooltipTimer);
-  }, []);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
   
    useEffect(() => {
@@ -67,7 +78,9 @@ const Index = () => {
   };
 
   const whatsappNumber = "5585996409590"; 
-  const whatsappMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
+  const [isChatOpen, setIsChatOpen] = useState(false);
+  const defaultChatMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
+  const [chatMessage, setChatMessage] = useState(defaultChatMessage);
 
   return (
     // Adicionado 'relative' para o botão flutuante funcionar corretamente
@@ -94,30 +107,79 @@ const Index = () => {
       <InstagramFeed />
       <Footer /> 
 
-      {/* 2. Botão Flutuante WhatsApp */}
-      <Tooltip open={isWhatsappTooltipOpen} onOpenChange={setIsWhatsappTooltipOpen}>
-        <TooltipTrigger asChild>
-          <a
-            href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`}
-            target="_blank"
-            rel="noopener noreferrer"
+{/* 2. Botão Flutuante WhatsApp (AGORA COM POPOVER) */}
+      <Popover open={isChatOpen} onOpenChange={setIsChatOpen}>
+        <PopoverTrigger asChild>
+          <button
             className="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center bg-primary rounded-full shadow-lg hover:bg-primary/90 transition-all duration-300 group"
             aria-label="Iniciar conversa no WhatsApp"
+            onClick={() => setIsChatOpen(true)}
           >
-            {/* Idealmente, substitua por um SVG do WhatsApp */}
-            <MessageCircle className="h-7 w-7 text-primary-foreground transition-transform duration-300 group-hover:scale-110" />
-          </a>
-        </TooltipTrigger>
-        <TooltipContent
-            side="left"
-            align="center"
-            sideOffset={10}
-            className="bg-charcoal text-white rounded-md shadow-lg border-none font-poppins" //
-            onPointerDownOutside={(e) => e.preventDefault()}
+            {/* 3. ÍCONE SUBSTITUÍDO */}
+            {/* ANTES: <MessageCircle className="h-7 w-7 text-primary-foreground transition-transform duration-300 group-hover:scale-110" /> */}
+            <img src="whatsapp.webp" alt="abri chat" className="h-8 w-8 text-primary-foreground transition-transform duration-300 group-hover:scale-110" />
+          </button>
+        </PopoverTrigger>
+        
+        {/* Conteúdo do Popover (O "Widget" da sua imagem) */}
+        <PopoverContent 
+          side="top"
+          align="end"
+          sideOffset={10}
+          className="w-80 rounded-lg shadow-xl border p-0"
+        >
+          {/* Cabeçalho */}
+          <div className="flex items-center justify-between bg-primary text-primary-foreground p-3 rounded-t-lg">
+            <h3 className="font-poppins font-semibold text-base">Iniciar conversa</h3>
+            <Button
+              variant="ghost"
+              size="icon"
+              className="h-8 w-8 text-primary-foreground hover:bg-primary/80 hover:text-primary-foreground"
+              onClick={() => {
+                setIsChatOpen(false);
+                setChatMessage(defaultChatMessage); 
+              }}
             >
-          Olá, precisa de ajuda?
-        </TooltipContent>
-      </Tooltip>
+              <X className="h-5 w-5" />
+            </Button>
+          </div>
+
+          {/* Corpo do Widget */}
+          <div className="p-4 space-y-3 bg-background rounded-b-lg">
+            <Label htmlFor="chat-message" className="font-poppins text-sm text-muted-foreground">
+              Digite sua mensagem:
+            </Label>
+            <Textarea
+              id="chat-message"
+              value={chatMessage}
+              onChange={(e) => setChatMessage(e.target.value)}
+              rows={4}
+              className="font-poppins"
+              placeholder="Escreva sua mensagem..."
+            />
+            {/* 4. BOTÃO DE ENVIAR ATUALIZADO (com ícone Send) */}
+            <Button
+              asChild 
+              size="lg"
+              className="w-full bg-green-500 hover:bg-green-600 text-white font-montserrat" // Estilo verde
+            >
+              <a
+                href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(chatMessage)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => {
+                  setIsChatOpen(false); 
+                  setChatMessage(defaultChatMessage);
+                }}
+              >
+                <Send className="h-4 w-4" /> {/* Ícone adicionado */}
+                Enviar via WhatsApp
+              </a>
+            </Button>
+          </div>
+        </PopoverContent>
+      </Popover>
+      {/* Fim do Popover */}
 
       {/* 3. Modal de Contato */}
       <ContactModal
