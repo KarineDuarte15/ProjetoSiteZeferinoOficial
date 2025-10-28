@@ -11,6 +11,7 @@ import ContactModal from "@/components/ContactModal";
 import { MessageCircle, X, Send} from 'lucide-react'; // Ou seu ícone do WhatsApp
 import Testimonials from "@/components/Testimonials";
 import Events from "@/components/Events";
+import whatsappLogo from '@/assets/WhatsApp.webp';
 import {
   Tooltip,
   TooltipContent,
@@ -37,16 +38,7 @@ interface LayoutComponentProps {
   onContactClick: () => void;
 }
 
-const WhatsappIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor" // Isso fará com que ele pegue a cor do texto (text-primary-foreground)
-    {...props}
-  >
-    <path d="M.057 24l1.687-6.163c-1.041-1.804-1.598-3.84-1.598-5.946C.146 5.334 5.414 0 12.041 0c6.627 0 11.896 5.334 11.896 11.912 0 6.577-5.269 11.912-11.896 11.912-1.99 0-3.866-.51-5.597-1.428L.057 24zM12.041 1.913c-5.521 0-9.99 4.48-9.99 9.998 0 2.01.571 3.897 1.6 5.53l-.387 1.416 1.442-.382a9.922 9.922 0 0 0 5.331 1.6c5.521 0 9.99-4.48 9.99-9.998s-4.469-9.998-9.99-9.998zm-2.858 13.39c-.492-.246-2.899-1.428-3.347-1.586-.447-.158-.772-.246-.997.246-.224.492-.857 1.586-1.048 1.912-.191.326-.382.368-.707.208-.326-.158-1.371-.51-2.609-1.613a9.23 9.23 0 0 1-1.816-2.22c-.191-.326-.03-.492.117-.65 1.058-.954 1.176-1.111 1.325-1.488.149-.368.074-.613-.037-.859-.111-.246-.997-2.411-1.365-3.312-.358-.881-.724-.759-.997-.775-.264-.016-.589-.016-.914-.016-.326 0-.857.117-1.305.589-.447.472-1.719 1.666-1.719 4.062 0 2.396 1.756 4.708 1.992 4.997.236.289 3.435 5.251 8.356 7.376 1.19.51 2.162.815 2.899 1.048.736.236 1.416.208 1.956.125.59-.083 1.756-1.048 2.03-2.062.273-1.015.273-1.874.191-2.062-.083-.188-.326-.289-.707-.535z" />
-  </svg>
-);
+
 
 const Index = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -115,10 +107,13 @@ const Index = () => {
             aria-label="Iniciar conversa no WhatsApp"
             onClick={() => setIsChatOpen(true)}
           >
-            {/* 3. ÍCONE SUBSTITUÍDO */}
-            {/* ANTES: <MessageCircle className="h-7 w-7 text-primary-foreground transition-transform duration-300 group-hover:scale-110" /> */}
-            <img src="whatsapp.webp" alt="abri chat" className="h-8 w-8 text-primary-foreground transition-transform duration-300 group-hover:scale-110" />
-          </button>
+            {/* 3. ÍCONE SUBSTITUÍDO PELA TUA IMAGEM WEBP */}
+            <img 
+              src={whatsappLogo} 
+              alt="Iniciar conversa no WhatsApp" 
+              className="h-8 w-8 transition-transform duration-300 group-hover:scale-110" 
+            />
+           </button>
         </PopoverTrigger>
         
         {/* Conteúdo do Popover (O "Widget" da sua imagem) */}
