@@ -1,13 +1,21 @@
 import { Instagram } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import insta1 from '@/assets/instagram/insta1.jpg';
+import insta2 from '@/assets/instagram/insta2.jpg';
+import insta3 from '@/assets/instagram/insta3.jpg';
+import insta4 from '@/assets/instagram/insta4.jpg';
+import insta5 from '@/assets/instagram/insta5.jpg';
+import insta6 from '@/assets/instagram/insta6.jpg';
 
 const InstagramFeed = () => {
   // Posts em destaque - podem ser substituídos por dados reais da API do Instagram
+
+
   const featuredPosts = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&h=400&fit=crop",
-      alt: "Casa moderna em destaque",
+      image: "https://www.instagram.com/p/DC4A13ZuIk9/",
+      alt: "inst1agram post",
     },
     {
       id: 2,
@@ -66,7 +74,7 @@ const InstagramFeed = () => {
           {featuredPosts.map((post) => (
             <a
               key={post.id}
-              href="https://instagram.com/zeferino"
+              href="https://www.instagram.com/lilianacorretora/"
               target="_blank"
               rel="noopener noreferrer"
               className="group relative aspect-square overflow-hidden rounded-lg"

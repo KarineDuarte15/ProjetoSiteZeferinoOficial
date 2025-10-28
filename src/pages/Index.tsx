@@ -9,6 +9,7 @@ import InstagramFeed from "@/components/InstagramFeed";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
 import { MessageCircle } from 'lucide-react'; // Ou seu ícone do WhatsApp
+import Testimonials from "@/components/Testimonials";
 import {
   Tooltip,
   TooltipContent,
@@ -76,6 +77,7 @@ const Index = () => {
       <AboutMe />
       <PropertyCategories /> 
       <FeaturedProperties /> 
+      <Testimonials />
       <InstagramFeed />
       <Footer /> 
 
