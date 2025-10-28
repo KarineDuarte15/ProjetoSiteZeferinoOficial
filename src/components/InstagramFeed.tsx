@@ -8,7 +8,6 @@ import insta5 from '@/assets/instagram/insta5.png';
 import insta6 from '@/assets/instagram/insta6.png';
 
 const InstagramFeed = () => {
-  // Posts em destaque - podem ser substituídos por dados reais da API do Instagram
 
 
   const featuredPosts = [

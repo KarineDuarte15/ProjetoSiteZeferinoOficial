@@ -19,7 +19,6 @@ interface Testimonial {
   imageUrl: string; // Caminho para a imagem do cliente
 }
 
-// Dados dos depoimentos (pode ser substituído por fetch de API se necessário)
 import cliente1Img from '@/assets/testimonials/cliente1.jpg';
 import cliente2Img from '@/assets/testimonials/cliente2.jpg';
 import cliente3Img from '@/assets/testimonials/cliente3.jpg';
@@ -29,7 +28,7 @@ const testimonialsData: Testimonial[] = [
     id: 1,
     name: "Cliente A",
     text: "Experiência incrível! Encontrei o imóvel dos meus sonhos com um atendimento exclusivo e atencioso. Recomendo fortemente!",
-    imageUrl: cliente1Img, // Use a variável importada
+    imageUrl: cliente1Img, 
   },
   {
     id: 2,
