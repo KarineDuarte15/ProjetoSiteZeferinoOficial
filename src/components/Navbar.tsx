@@ -25,6 +25,8 @@ const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
     { name: "Início", href: "#inicio" },
     { name: "Imóveis", href: "#imoveis" },
     { name: "Sobre", href: "#sobre" },
+    { name: "Instagram", href: "#instagram" },
+    { name: "Eventos", href: "#eventos" },
     { name: "Depoimentos", href: "#depoimentos" },
     { name: "Contato", href: "#contato" },
   ];
@@ -39,7 +41,7 @@ const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
             <img 
               src={logoHeader} 
               alt="Zeferino Logo" 
-              className="w-20 h-20 logo-key" 
+              className="w-14 h-14 logo-key" 
             />
             <span className="font-playfair text-4xl font-bold text-primary">
               Zeferino

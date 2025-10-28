@@ -86,7 +86,7 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose, searchCrit
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-[800px] grid grid-cols-1 md:grid-cols-2 gap-8 p-0 overflow-hidden"> {/* Adicionado overflow-hidden */}
+      <DialogContent className="sm:max-w-[800px] grid grid-cols-1 md:grid-cols-2 gap-8 p-0 overflow-hidden max-h-[90svh] overflow-y-auto"> {/* Adicionado overflow-hidden */}
         {/* Lado Esquerdo */}
         <div className="p-8 flex flex-col justify-center bg-muted/30 rounded-l-lg order-last md:order-first"> {/* Mudado a ordem em telas pequenas */}
           <DialogHeader className="mb-6 text-left">

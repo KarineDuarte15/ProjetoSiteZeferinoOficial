@@ -13,12 +13,12 @@ const Footer = () => {
               <img 
               src={logoHeader} 
               alt="Zeferino Logo" 
-              className="w-20 h-20 logo-key" // Adicionamos a classe 'logo-key' para a animação
+              className="w-16 h-16 logo-key" // Adicionamos a classe 'logo-key' para a animação
             />
               <h3 className="font-playfair text-3xl font-bold">Zeferino</h3>
             </div>
             <p className="font-poppins text-primary-foreground/80 mb-4">
-              A chave para seu novo lar. Imóveis sem burocracia, com propósito e confiança.
+              A chave para seu novo lar. Imóveis Exclusivos, com propósito e confiança.
             </p>
             <div className="flex gap-4">
               <a 
@@ -88,7 +88,7 @@ const Footer = () => {
             <ul className="space-y-3 font-poppins">
               <li className="flex items-start gap-2">
                 <Phone className="w-5 h-5 mt-0.5 text-accent flex-shrink-0" />
-                <span>(21) 99999-9999</span>
+                <span>(85) 99640-9590</span>
               </li>
               <li className="flex items-start gap-2">
                 <Mail className="w-5 h-5 mt-0.5 text-accent flex-shrink-0" />
@@ -96,7 +96,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin className="w-5 h-5 mt-0.5 text-accent flex-shrink-0" />
-                <span>Rio de Janeiro, RJ</span>
+                <span>Fortaleza, CE</span>
               </li>
             </ul>
           </div>

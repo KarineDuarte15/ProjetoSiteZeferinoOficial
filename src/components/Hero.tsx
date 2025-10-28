@@ -164,10 +164,10 @@ const Hero: React.FC<HeroProps> = ({ onSearchSubmit }) => { // Recebe onSearchSu
 
         {/* Textos */}
         <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
-          Bem-vindo à Zeferino
+          Imóveis exclusivos, com propósito e confiança.
         </h1>
         <p className="font-poppins text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Imóveis sem burocracia, com propósito e confiança.
+          Encontre o lar dos seus sonhos aqui, imóveis selecionados para você, feitos sob medida, sua jornada começa aqui.
         </p>
 
         {/* Card de Busca */}
@@ -175,7 +175,7 @@ const Hero: React.FC<HeroProps> = ({ onSearchSubmit }) => { // Recebe onSearchSu
           <CardContent className="p-6 md:p-8">
             {/* Abas de Filtro */}
             <Tabs defaultValue="comprar" className="w-full">
-              <TabsList className="grid w-full grid-cols-3 mb-6 h-auto bg-transparent gap-3">
+              <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-6 h-auto bg-transparent gap-3">
                  {/* TabsTriggers (sem alterações) */}
                  <TabsTrigger
                   value="comprar"
