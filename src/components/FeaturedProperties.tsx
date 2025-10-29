@@ -62,10 +62,33 @@ import madriImg7 from "@/assets/madri/madri7.jpg";
 import madriImg8 from "@/assets/madri/madri8.jpg";
 import madriImg9 from "@/assets/madri/madri9.jpg";
 import madriImg10 from "@/assets/madri/madri10.jpg";
-
-
-
 // .......................................................
+//  atlantico
+import atlanticImg1 from "@/assets/atlantico/atlantico1.jpg";
+import atlanticImg2 from "@/assets/atlantico/atlantico2.jpg";
+import atlanticImg3 from "@/assets/atlantico/atlantico3.jpg";
+import atlanticImg4 from "@/assets/atlantico/atlantico4.jpg";
+import atlanticImg5 from "@/assets/atlantico/atlantico5.jpg";
+import atlanticImg6 from "@/assets/atlantico/atlantico6.jpg"; 
+import atlanticImg7 from "@/assets/atlantico/atlantico7.jpg";
+import atlanticImg8 from "@/assets/atlantico/atlantico8.jpg";
+import atlanticImg9 from "@/assets/atlantico/atlantico9.jpg";
+import atlanticImg10 from "@/assets/atlantico/atlantico10.jpg";
+import atlanticImg11 from "@/assets/atlantico/atlantico11.jpg";
+import atlanticImg12 from "@/assets/atlantico/atlantico12.jpg";
+import atlanticImg13 from "@/assets/atlantico/atlantico13.jpg";
+import atlanticImg14 from "@/assets/atlantico/atlantico14.jpg";
+import atlanticImg15 from "@/assets/atlantico/atlantico15.jpg";
+import atlanticImg16 from "@/assets/atlantico/atlantico16.jpg";
+import atlanticImg17 from "@/assets/atlantico/atlantico17.jpg";
+import atlanticImg18 from "@/assets/atlantico/atlantico18.jpg"; 
+import atlanticImg19 from "@/assets/atlantico/atlantico19.jpg";
+import atlanticImg20 from "@/assets/atlantico/atlantico20.jpg";
+import atlanticImg21 from "@/assets/atlantico/atlantico21.jpg";
+import atlanticImg22 from "@/assets/atlantico/atlantico22.jpg";
+import atlanticImg23 from "@/assets/atlantico/atlantico23.jpg";
+import atlanticImg24 from "@/assets/atlantico/atlantico24.jpg";
+// .......................................................  
 
 
 
@@ -184,8 +207,31 @@ const properties: Property[] = [
     hasBalcony: true,
     parkingSpaces: 1,
     images: [
-      mansoesImg1
-    ],
+      atlanticImg1,
+      atlanticImg2,
+      atlanticImg3,
+      atlanticImg4,
+      atlanticImg5,
+      atlanticImg6,
+      atlanticImg7,
+      atlanticImg8,
+      atlanticImg9,
+      atlanticImg10,
+      atlanticImg11,
+      atlanticImg12,
+      atlanticImg13,
+      atlanticImg14,
+      atlanticImg15,
+      atlanticImg16,
+      atlanticImg17,
+      atlanticImg18,
+      atlanticImg19,
+      atlanticImg20,
+      atlanticImg21,
+      atlanticImg22,
+      atlanticImg23,
+      atlanticImg24   
+     ],
     featured: false
   },
   {
