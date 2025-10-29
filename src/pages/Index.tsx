@@ -107,7 +107,7 @@ const Index = () => {
             aria-label="Iniciar conversa no WhatsApp"
             onClick={() => setIsChatOpen(true)}
           >
-            {/* 3. ÍCONE SUBSTITUÍDO PELA TUA IMAGEM WEBP */}
+           
             <img 
               src={whatsappLogo} 
               alt="Iniciar conversa no WhatsApp" 

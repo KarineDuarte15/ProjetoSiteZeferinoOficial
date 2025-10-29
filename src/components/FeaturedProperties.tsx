@@ -51,6 +51,21 @@ import mansoesImg12 from "@/assets/mansoes-do-lago/Areadelazer004.png";
 import mansoesImg13 from "@/assets/mansoes-do-lago/Areadelazer005.png";
 
 // .......................................................
+// madri residence
+import madriImg1 from "@/assets/madri/madri1.jpg";
+import madriImg2 from "@/assets/madri/madri2.jpg";
+import madriImg3 from "@/assets/madri/madri3.jpg";
+import madriImg4 from "@/assets/madri/madri4.jpg";
+import madriImg5 from "@/assets/madri/madri5.jpg";
+import madriImg6 from "@/assets/madri/madri6.jpg"; 
+import madriImg7 from "@/assets/madri/madri7.jpg";
+import madriImg8 from "@/assets/madri/madri8.jpg";
+import madriImg9 from "@/assets/madri/madri9.jpg";
+import madriImg10 from "@/assets/madri/madri10.jpg";
+
+
+
+// .......................................................
 
 
 
@@ -146,7 +161,16 @@ const properties: Property[] = [
     parkingSpaces: 2,
      // Substitua pelos imports reais ou URLs
     images: [
-      mansoesImg1
+      madriImg1,
+      madriImg2,
+      madriImg3,
+      madriImg4,
+      madriImg5,
+      madriImg6,
+      madriImg7,
+      madriImg8,
+      madriImg9,
+      madriImg10
     ],
     featured: true
   },
