@@ -69,7 +69,7 @@ const Index = () => {
      setIsContactModalOpen(true);
   };
 
-  const whatsappNumber = "5585996409590"; 
+  const whatsappNumber = "5585992265756"; 
   const [isChatOpen, setIsChatOpen] = useState(false);
   const defaultChatMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
   const [chatMessage, setChatMessage] = useState(defaultChatMessage);

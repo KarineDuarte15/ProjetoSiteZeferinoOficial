@@ -10,25 +10,15 @@ interface NavbarProps { // Adicione esta interface
 
 const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
   const [isOpen, setIsOpen] = useState(false);
-  <a
-        key="Contato"
-        href="#contato" // Pode manter o href para fallback
-        onClick={(e) => { e.preventDefault(); onContactClick(); }} // Chama a função ao clicar
-        className="..."
-      >
-        Contato
-      </a>
-      
-  
 
   const navLinks = [
     { name: "Início", href: "#inicio" },
     { name: "Imóveis", href: "#imoveis" },
-    { name: "Sobre", href: "#sobre" },
-    { name: "Instagram", href: "#instagram" },
-    { name: "Eventos", href: "#eventos" },
-    { name: "Depoimentos", href: "#depoimentos" },
-    { name: "Contato", href: "#contato" },
+    { name: "Sobre", href: "#Aboutme" },
+    { name: "Instagram", href: "#Instagram" },
+    { name: "Eventos", href: "#Events" },
+    { name: "Depoimentos", href: "#Testimonials" },
+    { name: "Contato", href: "#ContactModal" },
   ];
 
   return (
