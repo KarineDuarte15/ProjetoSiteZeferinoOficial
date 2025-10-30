@@ -122,6 +122,28 @@ import vistacosteiraImg29 from "@/assets/vistacosteira/img29.jpg";
 import vistacosteiraImg30 from "@/assets/vistacosteira/img30.jpg";
 //........................................................
 //vista mar 
+import vistamarImg1 from "@/assets/vistamar/img1.jpg";
+import vistamarImg2 from "@/assets/vistamar/img2.jpg";
+import vistamarImg3 from "@/assets/vistamar/img3.jpg";
+import vistamarImg4 from "@/assets/vistamar/img4.jpg";
+import vistamarImg5 from "@/assets/vistamar/img5.jpg";
+import vistamarImg6 from "@/assets/vistamar/img6.jpg";
+import vistamarImg7 from "@/assets/vistamar/img7.jpg";
+import vistamarImg8 from "@/assets/vistamar/img8.jpg";
+import vistamarImg9 from "@/assets/vistamar/img9.jpg";
+import vistamarImg10 from "@/assets/vistamar/img10.jpg";
+import vistamarImg11 from "@/assets/vistamar/img11.jpg";
+import vistamarImg12 from "@/assets/vistamar/img12.jpg";
+import vistamarImg13 from "@/assets/vistamar/img13.jpg";
+import vistamarImg14 from "@/assets/vistamar/img14.jpg";
+import vistamarImg15 from "@/assets/vistamar/img15.jpg";
+import vistamarImg16 from "@/assets/vistamar/img16.jpg";
+import vistamarImg17 from "@/assets/vistamar/img17.jpg";
+import vistamarImg18 from "@/assets/vistamar/img18.jpg";
+import vistamarImg19 from "@/assets/vistamar/img19.jpg";
+import vistamarImg20 from "@/assets/vistamar/img20.jpg";
+import vistamarImg21 from "@/assets/vistamar/img21.jpg";
+
 //.......................................................
 //vista parque 
 //.......................................................
@@ -329,7 +351,27 @@ const properties: Property[] = [
     hasBalcony: true,
     parkingSpaces: 1,
      images: [
-      mansoesImg1
+      vistamarImg11,
+      vistamarImg1,
+      vistamarImg2,
+      vistamarImg3,
+      vistamarImg4,
+      vistamarImg5,
+      vistamarImg6,
+      vistamarImg7,
+      vistamarImg8,
+      vistamarImg9,
+      vistamarImg10,
+      vistamarImg12,
+      vistamarImg13,
+      vistamarImg14,
+      vistamarImg15,
+      vistamarImg16,
+      vistamarImg17,
+      vistamarImg18,
+      vistamarImg19,
+      vistamarImg20,
+      vistamarImg21
     ],
     featured: false
   },
