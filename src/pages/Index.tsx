@@ -74,30 +74,52 @@ const Index = () => {
   const defaultChatMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
   const [chatMessage, setChatMessage] = useState(defaultChatMessage);
 
-  return (
-    // Adicionado 'relative' para o botão flutuante funcionar corretamente
+return (
     <div className="min-h-screen bg-background font-poppins relative">
 
-      {/* 1. Ordem correta dos componentes */}
+      {/* 1. Ordem correta dos componentes (COM IDs) */}
       <Navbar onContactClick={handleOpenModalGeneric} />
-      <Hero onSearchSubmit={handleOpenModalWithSearch} />
-      <AboutMe />
+      
+      {/* --- ALTERAÇÕES AQUI --- */}
+      <Hero id="inicio" onSearchSubmit={handleOpenModalWithSearch} />
+      <div id="sobre-mim">
+        <AboutMe />
+      </div>
+      
       <PropertyCategories
         selectedCategory={selectedCategory}     
         onCategorySelect={setSelectedCategory}
       /> 
+      
+      {/* Adiciona os IDs aos outros componentes também */}
       {(() => {
-        const C: React.ComponentType<{ selectedCategory: string | null }> = FeaturedProperties;
+        // Precisamos passar o ID para o FeaturedProperties
+        const C: React.ComponentType<{ selectedCategory: string | null, id: string }> = FeaturedProperties;
         return (
           <C
+            id="imoveis"
             selectedCategory={selectedCategory}
           />
         );
       })()}
-      <Testimonials />
-      <Events />
-      <InstagramFeed />
-      <Footer /> 
+      {(() => {
+        // Cast Testimonials so we can pass an id prop for anchor linking
+        const T: React.ComponentType<{ id: string }> = Testimonials;
+        return <T id="depoimentos" />;
+      })()}
+      {(() => {
+        // Cast Events so we can pass an id prop for anchor linking
+        const E: React.ComponentType<{ id: string }> = Events;
+        return <E id="eventos" />;
+      })()}
+      {(() => {
+        // Cast InstagramFeed so we can pass an id prop for anchor linking
+        const I: React.ComponentType<{ id: string }> = InstagramFeed;
+        return <I id="instagram" />;
+      })()}
+
+
+      <Footer />
 
 {/* 2. Botão Flutuante WhatsApp (AGORA COM POPOVER) */}
       <Popover open={isChatOpen} onOpenChange={setIsChatOpen}>

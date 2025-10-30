@@ -1,4 +1,4 @@
-// src/components/Hero.tsx
+// 🚀 COPIA E COLA ISTO PARA: src/components/Hero.tsx
 import React, { useState } from "react";
 import HeroGif from "@/assets/hero-background.gif";
 import logoCentral from "@/assets/hero-central.png";
@@ -15,28 +15,23 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 
-// Interface para definir a estrutura dos dados da busca
+// ... (Interface SearchCriteria e SearchFormProps ficam iguais) ...
 interface SearchCriteria {
   estado?: string;
   cidade?: string;
   bairro?: string;
 }
-
-// Interface para as props do SearchForm
 interface SearchFormProps {
-  // Função que será chamada ao submeter a busca
   onSubmit: (criteria: SearchCriteria) => void;
 }
 
-
-// Componente SearchForm agora recebe a prop onSubmit
-const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSubmit
+// ... (Componente SearchForm fica igual) ...
+const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => {
   const [estadoSelecionado, setEstadoSelecionado] = useState<string | undefined>(undefined);
   const [cidadeSelecionada, setCidadeSelecionada] = useState<string | undefined>(undefined);
   const [bairroSelecionado, setBairroSelecionado] = useState<string | undefined>(undefined);
   const [cidadesDisponiveis, setCidadesDisponiveis] = useState<{ nome: string; bairros: string[] }[]>([]);
   const [bairrosDisponiveis, setBairrosDisponiveis] = useState<string[]>([]);
-
   const estadosOrdenados = [...localidadesData].sort((a, b) => a.nome.localeCompare(b.nome));
 
   const handleEstadoChange = (siglaEstado: string) => {
@@ -57,29 +52,22 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSu
     setBairroSelecionado(undefined);
   };
 
-  // Função para lidar com o clique no botão BUSCAR
   const handleSearchSubmit = (event: React.MouseEvent<HTMLButtonElement>) => {
-    event.preventDefault(); // Previne recarregamento da página se estiver dentro de um <form>
-
-    // Encontra o nome completo do estado selecionado para passar ao modal
+    event.preventDefault(); 
      const estadoNome = estadosOrdenados.find(e => e.sigla === estadoSelecionado)?.nome;
-
-    // Chama a função onSubmit passada pelo Index.tsx com os dados
     onSubmit({
-      estado: estadoNome, // Passa o nome completo do estado
+      estado: estadoNome,
       cidade: cidadeSelecionada,
       bairro: bairroSelecionado,
     });
   };
 
   return (
-    // Envolvemos em um <form> para semântica, mas prevenimos o submit padrão
     <form className="flex flex-col gap-6" onSubmit={(e) => e.preventDefault()}>
       <h3 className="text-center font-playfair text-2xl font-bold text-primary">
         Encontre seu imóvel ideal
       </h3>
       <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-        {/* Select Estado */}
         <Select onValueChange={handleEstadoChange} value={estadoSelecionado}>
           <SelectTrigger className="h-12 text-base">
             <SelectValue placeholder="Estado" />
@@ -92,8 +80,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSu
             ))}
           </SelectContent>
         </Select>
-
-        {/* Select Cidade */}
         <Select
           onValueChange={handleCidadeChange}
           value={cidadeSelecionada}
@@ -110,8 +96,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSu
             ))}
           </SelectContent>
         </Select>
-
-        {/* Select Bairro */}
         <Select
           onValueChange={setBairroSelecionado}
           value={bairroSelecionado}
@@ -129,8 +113,6 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSu
           </SelectContent>
         </Select>
       </div>
-
-      {/* Botão BUSCAR agora chama handleSearchSubmit */}
       <Button size="lg" className="w-full text-base" onClick={handleSearchSubmit}>
         BUSCAR
       </Button>
@@ -138,45 +120,41 @@ const SearchForm: React.FC<SearchFormProps> = ({ onSubmit }) => { // Recebe onSu
   );
 };
 
-// Interface para as props do Hero
+
+// --- ALTERAÇÃO AQUI ---
+// 1. A Interface de Props agora inclui "id"
 interface HeroProps {
   onSearchSubmit: (criteria: SearchCriteria) => void;
+  id: string; // <-- ADICIONADO
 }
 
-// Componente Hero Principal - agora recebe onSearchSubmit e passa para SearchForm
-const Hero: React.FC<HeroProps> = ({ onSearchSubmit }) => { // Recebe onSearchSubmit
+// 2. O componente agora recebe "id"
+const Hero: React.FC<HeroProps> = ({ onSearchSubmit, id }) => { 
   return (
+    // 3. O "id" é aplicado à div principal
     <div
+      id={id} // <-- ADICIONADO
       className="relative w-full min-h-screen overflow-hidden bg-cover bg-center flex items-center justify-center pt-24 pb-12"
       style={{ backgroundImage: `url(${HeroGif})` }}
     >
-      {/* Overlay escuro */}
+      {/* ... (O resto do teu código Hero fica igual) ... */}
       <div className="absolute inset-0 bg-black/60 z-0" />
-
-      {/* Conteúdo */}
       <div className="relative z-10 w-full max-w-4xl px-4 text-center">
-        {/* Logo Central */}
         <img
           src={logoCentral}
           alt="Zeferino Logo Central"
           className="w-40 md:w-48 mx-auto mb-4"
         />
-
-        {/* Textos */}
         <h1 className="font-playfair text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-2">
           Imóveis exclusivos, com propósito e confiança.
         </h1>
         <p className="font-poppins text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
           Encontre o lar dos seus sonhos aqui, imóveis selecionados para você, feitos sob medida, sua jornada começa aqui.
         </p>
-
-        {/* Card de Busca */}
         <Card className="w-full max-w-3xl mx-auto text-left shadow-2xl">
           <CardContent className="p-6 md:p-8">
-            {/* Abas de Filtro */}
             <Tabs defaultValue="comprar" className="w-full">
               <TabsList className="grid w-full grid-cols-1 sm:grid-cols-3 mb-6 h-auto bg-transparent gap-3">
-                 {/* TabsTriggers (sem alterações) */}
                  <TabsTrigger
                   value="comprar"
                   className="py-2.5 font-montserrat uppercase border-2 border-primary text-primary bg-white shadow-none data-[state=active]:bg-primary data-[state=active]:text-primary-foreground data-[state=active]:border-primary"
@@ -196,8 +174,6 @@ const Hero: React.FC<HeroProps> = ({ onSearchSubmit }) => { // Recebe onSearchSu
                   LANÇAMENTOS
                 </TabsTrigger>
               </TabsList>
-
-              {/* Conteúdo das Abas - passa a prop onSubmit para SearchForm */}
               <TabsContent value="comprar">
                 <SearchForm onSubmit={onSearchSubmit} />
               </TabsContent>
