@@ -1,5 +1,20 @@
 # Tratar todas estas extensões como arquivos binários
 # Isso desliga qualquer conversão de quebra de linha (CRLF/LF)
+# Define o comportamento padrão para normalizar finais de linha.
+# Arquivos de texto serão normalizados para LF no repositório.
+* text=auto
+
+# Declara explicitamente os arquivos de texto que devem sempre ser normalizados.
+*.html text
+*.css text
+*.js text
+*.jsx text
+*.ts text
+*.tsx text
+*.json text
+*.md text
+
+# Trata estas extensões como arquivos binários, desligando a conversão de quebra de linha.
 *.png binary
 *.jpg binary
 *.jpeg binary
@@ -8,6 +23,7 @@
 *.ico binary
 *.webp binary
 # Adicionar regras para as extensões em maiúsculas por segurança
+# Regras para extensões em maiúsculas por segurança
 *.JPG binary
 *.JPEG binary
 *.PNG binary
