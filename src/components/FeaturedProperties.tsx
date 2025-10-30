@@ -89,7 +89,50 @@ import atlanticImg22 from "@/assets/atlantico/atlantico22.jpg";
 import atlanticImg23 from "@/assets/atlantico/atlantico23.jpg";
 import atlanticImg24 from "@/assets/atlantico/atlantico24.jpg";
 // .......................................................  
-
+//vista costeira 
+import vistacosteiraImg1 from "@/assets/vistacosteira/img1.jpg";
+import vistacosteiraImg2 from "@/assets/vistacosteira/img2.jpg";
+import vistacosteiraImg3 from "@/assets/vistacosteira/img3.jpg";
+import vistacosteiraImg4 from "@/assets/vistacosteira/img4.jpg";
+import vistacosteiraImg5 from "@/assets/vistacosteira/img5.jpg";
+import vistacosteiraImg6 from "@/assets/vistacosteira/img6.jpg";
+import vistacosteiraImg7 from "@/assets/vistacosteira/img7.jpg";
+import vistacosteiraImg8 from "@/assets/vistacosteira/img8.jpg";
+import vistacosteiraImg9 from "@/assets/vistacosteira/img9.jpg";
+import vistacosteiraImg10 from "@/assets/vistacosteira/img10.jpg";
+import vistacosteiraImg11 from "@/assets/vistacosteira/img11.jpg";
+import vistacosteiraImg12 from "@/assets/vistacosteira/img12.jpg";
+import vistacosteiraImg13 from "@/assets/vistacosteira/img13.jpg";
+import vistacosteiraImg14 from "@/assets/vistacosteira/img14.jpg";
+import vistacosteiraImg15 from "@/assets/vistacosteira/img15.jpg";
+import vistacosteiraImg16 from "@/assets/vistacosteira/img16.jpg";
+import vistacosteiraImg17 from "@/assets/vistacosteira/img17.jpg";
+import vistacosteiraImg18 from "@/assets/vistacosteira/img18.jpg";
+import vistacosteiraImg19 from "@/assets/vistacosteira/img19.jpg";
+import vistacosteiraImg20 from "@/assets/vistacosteira/img20.jpg";
+import vistacosteiraImg21 from "@/assets/vistacosteira/img21.jpg";
+import vistacosteiraImg22 from "@/assets/vistacosteira/img22.jpg";
+import vistacosteiraImg23 from "@/assets/vistacosteira/img23.jpg";
+import vistacosteiraImg24 from "@/assets/vistacosteira/img24.jpg";
+import vistacosteiraImg25 from "@/assets/vistacosteira/img25.jpg";
+import vistacosteiraImg26 from "@/assets/vistacosteira/img26.jpg";
+import vistacosteiraImg27 from "@/assets/vistacosteira/img27.jpg";
+import vistacosteiraImg28 from "@/assets/vistacosteira/img28.jpg";
+import vistacosteiraImg29 from "@/assets/vistacosteira/img29.jpg";
+import vistacosteiraImg30 from "@/assets/vistacosteira/img30.jpg";
+//........................................................
+//vista mar 
+//.......................................................
+//vista parque 
+//.......................................................
+//vitória acácia 
+//.......................................................
+//vitória eusébio 
+//.......................................................
+//vitória isis 
+//.......................................................
+//vitória maracanaú 
+//....................................................... 
 
 
 import { cn } from '@/lib/utils';
@@ -128,9 +171,8 @@ const properties: Property[] = [
     parkingSpaces: 1,
     // Use as variáveis importadas
     images: [
-
-        biker1Img,
         churrasqueiraImg,
+        biker1Img,
         cozinhaImg,
         deckImg,
         fachadaDImg,
@@ -158,9 +200,9 @@ const properties: Property[] = [
     parkingSpaces: 2,
     // Substitua pelos imports reais ou URLs
     images: [ 
+      mansoesImg2,
       mansoesImg1, 
-      mansoesImg2
-      ,PlantaImg4
+      PlantaImg4
       ,PlantaImg5
       ,mansoesImg6
       ,mansoesImg7
@@ -184,13 +226,13 @@ const properties: Property[] = [
     parkingSpaces: 2,
      // Substitua pelos imports reais ou URLs
     images: [
+      madriImg7,
       madriImg1,
       madriImg2,
       madriImg3,
       madriImg4,
       madriImg5,
       madriImg6,
-      madriImg7,
       madriImg8,
       madriImg9,
       madriImg10
@@ -207,6 +249,7 @@ const properties: Property[] = [
     hasBalcony: true,
     parkingSpaces: 1,
     images: [
+      atlanticImg8,
       atlanticImg1,
       atlanticImg2,
       atlanticImg3,
@@ -214,7 +257,6 @@ const properties: Property[] = [
       atlanticImg5,
       atlanticImg6,
       atlanticImg7,
-      atlanticImg8,
       atlanticImg9,
       atlanticImg10,
       atlanticImg11,
@@ -243,7 +285,38 @@ const properties: Property[] = [
     area: "48,82 a 84,08m²",
     hasBalcony: true,
     parkingSpaces: 1,
-    images: [ mansoesImg2 ], // Substitua
+    images: [
+      vistacosteiraImg11,
+      vistacosteiraImg1,
+      vistacosteiraImg2,
+      vistacosteiraImg3,
+      vistacosteiraImg4,
+      vistacosteiraImg5,
+      vistacosteiraImg6,
+      vistacosteiraImg7,
+      vistacosteiraImg8,
+      vistacosteiraImg9,
+      vistacosteiraImg10,
+      vistacosteiraImg12,
+      vistacosteiraImg13,
+      vistacosteiraImg14,
+      vistacosteiraImg15,
+      vistacosteiraImg16,
+      vistacosteiraImg17,
+      vistacosteiraImg18,
+      vistacosteiraImg19,
+      vistacosteiraImg20,
+      vistacosteiraImg21,
+      vistacosteiraImg22,
+      vistacosteiraImg23,
+      vistacosteiraImg24,
+      vistacosteiraImg25,
+      vistacosteiraImg26,
+      vistacosteiraImg27,
+      vistacosteiraImg28,
+      vistacosteiraImg29,
+      vistacosteiraImg30
+     ], 
     featured: false
   },
   {
@@ -326,6 +399,20 @@ const properties: Property[] = [
     hasBalcony: false,
     parkingSpaces: 1,
      images: [
+      mansoesImg1
+    ],
+    featured: false
+  },
+  {
+    id: 12,
+    title: "Belvedere",
+    location: "Eusébio",
+    bedrooms: 2,
+    bathrooms: 2,
+    area: "48,77  a 102,34m²",
+    hasBalcony: false,
+    parkingSpaces: 1,
+    images: [
       mansoesImg1
     ],
     featured: false
