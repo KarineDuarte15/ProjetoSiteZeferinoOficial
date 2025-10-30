@@ -8,13 +8,14 @@ import AboutMe from "@/components/AboutMe";
 import InstagramFeed from "@/components/InstagramFeed";
 import Footer from "@/components/Footer";
 import ContactModal from "@/components/ContactModal";
-import { MessageCircle, X, Send} from 'lucide-react'; // Ou seu ícone do WhatsApp
+import { MessageCircle, X, Send, ArrowUp } from 'lucide-react'; // Ou seu ícone do WhatsApp
 import Testimonials from "@/components/Testimonials";
 import Events from "@/components/Events";
 import whatsappLogo from '@/assets/WhatsApp.webp';
 import {
   Tooltip,
   TooltipContent,
+  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import {
@@ -68,14 +69,39 @@ const Index = () => {
      setCurrentSearchCriteria(undefined);
      setIsContactModalOpen(true);
   };
-
   const whatsappNumber = "5585992265756"; 
   const [isChatOpen, setIsChatOpen] = useState(false);
   const defaultChatMessage = "Olá! Gostaria de saber mais sobre os imóveis.";
   const [chatMessage, setChatMessage] = useState(defaultChatMessage);
 
+  // Estado e handlers para o botão "Voltar ao topo"
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  const scrollToTop = () => {
+    if (typeof window !== "undefined") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
+useEffect(() => {
+  const onScroll = () => {
+    if (typeof window !== "undefined") {
+      setShowScrollTop(window.scrollY > 300);
+    }
+  };
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", onScroll);
+    onScroll();
+  }
+  return () => {
+    if (typeof window !== "undefined") {
+      window.removeEventListener("scroll", onScroll);
+    }
+  };
+}, []);
+
 return (
-    <div className="min-h-screen bg-background font-poppins relative">
+  <div className="min-h-screen bg-background font-poppins relative">
 
       {/* 1. Ordem correta dos componentes (COM IDs) */}
       <Navbar onContactClick={handleOpenModalGeneric} />
@@ -204,6 +230,30 @@ return (
         onClose={handleCloseModal}
         searchCriteria={currentSearchCriteria}
       />
+
+      {showScrollTop && (
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button
+                onClick={scrollToTop}
+                variant="default"
+                size="icon"
+                // MUDANÇAS AQUI: Removemos "right-6" e adicionámos "left-1/2 -translate-x-1/2"
+                className="fixed bottom-10 left-1/2 -translate-x-1/2 z-50 flex h-14 w-14 rounded-full shadow-lg transition-all duration-300 group"
+                aria-label="Voltar ao topo"
+              >
+                <ArrowUp className="h-7 w-7" />
+              </Button>
+            </TooltipTrigger>
+            {/* MUDANÇA AQUI: "side" agora é "top" para o tooltip não ficar estranho */}
+            <TooltipContent side="top">
+              <p>Voltar ao topo</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
+      )}
+      {/* --- FIM DO NOVO CÓDIGO --- */}
     </div>
   );
 };
