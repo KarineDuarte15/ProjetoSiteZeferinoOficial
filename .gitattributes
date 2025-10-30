@@ -1,5 +1,3 @@
-# Tratar todas estas extensões como arquivos binários
-# Isso desliga qualquer conversão de quebra de linha (CRLF/LF)
 # Define o comportamento padrão para normalizar finais de linha.
 # Arquivos de texto serão normalizados para LF no repositório.
 * text=auto
@@ -22,7 +20,6 @@
 *.svg binary
 *.ico binary
 *.webp binary
-# Adicionar regras para as extensões em maiúsculas por segurança
 # Regras para extensões em maiúsculas por segurança
 *.JPG binary
 *.JPEG binary
