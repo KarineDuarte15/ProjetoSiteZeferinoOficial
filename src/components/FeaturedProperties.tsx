@@ -146,6 +146,32 @@ import vistamarImg21 from "@/assets/vistamar/img21.jpg";
 
 //.......................................................
 //vista parque 
+import vistaParqueImg1 from "@/assets/vistaparque/img1.jpg";
+import vistaParqueImg2 from "@/assets/vistaparque/img2.jpg";
+import vistaParqueImg3 from "@/assets/vistaparque/img3.jpg";
+import vistaParqueImg4 from "@/assets/vistaparque/img4.jpg";
+import vistaParqueImg5 from "@/assets/vistaparque/img5.jpg";
+import vistaParqueImg6 from "@/assets/vistaparque/img6.jpg";
+import vistaParqueImg7 from "@/assets/vistaparque/img7.jpg";
+import vistaParqueImg8 from "@/assets/vistaparque/img8.jpg";
+import vistaParqueImg9 from "@/assets/vistaparque/img9.jpg";
+import vistaParqueImg10 from "@/assets/vistaparque/img10.jpg";
+import vistaParqueImg11 from "@/assets/vistaparque/img11.jpg";
+import vistaParqueImg12 from "@/assets/vistaparque/img12.jpg";
+import vistaParqueImg13 from "@/assets/vistaparque/img13.jpg";
+import vistaParqueImg14 from "@/assets/vistaparque/img14.jpg";
+import vistaParqueImg15 from "@/assets/vistaparque/img15.jpg";
+import vistaParqueImg16 from "@/assets/vistaparque/img16.jpg";
+import vistaParqueImg17 from "@/assets/vistaparque/img17.jpg";
+import vistaParqueImg18 from "@/assets/vistaparque/img18.jpg";
+import vistaParqueImg19 from "@/assets/vistaparque/img19.jpg";
+import vistaParqueImg20 from "@/assets/vistaparque/img20.jpg"; 
+import vistaParqueImg21 from "@/assets/vistaparque/img21.jpg";
+import vistaParqueImg22 from "@/assets/vistaparque/img22.jpg";
+import vistaParqueImg23 from "@/assets/vistaparque/img23.jpg";
+import vistaParqueImg24 from "@/assets/vistaparque/img24.jpg";
+import vistaParqueImg25 from "@/assets/vistaparque/img25.jpg";
+
 //.......................................................
 //vitória acácia 
 //.......................................................
@@ -351,7 +377,7 @@ const properties: Property[] = [
     hasBalcony: true,
     parkingSpaces: 1,
      images: [
-      vistamarImg11,
+      
       vistamarImg1,
       vistamarImg2,
       vistamarImg3,
@@ -362,6 +388,7 @@ const properties: Property[] = [
       vistamarImg8,
       vistamarImg9,
       vistamarImg10,
+      vistamarImg11,
       vistamarImg12,
       vistamarImg13,
       vistamarImg14,
@@ -385,7 +412,31 @@ const properties: Property[] = [
     hasBalcony: true,
     parkingSpaces: 1,
     images: [
-      mansoesImg1
+      vistaParqueImg15,
+      vistaParqueImg1,
+      vistaParqueImg2,
+      vistaParqueImg3,
+      vistaParqueImg4,
+      vistaParqueImg5,
+      vistaParqueImg6,
+      vistaParqueImg7,
+      vistaParqueImg8,
+      vistaParqueImg9,
+      vistaParqueImg10,
+      vistaParqueImg11,
+      vistaParqueImg12,
+      vistaParqueImg13,
+      vistaParqueImg14,
+      vistaParqueImg16,
+      vistaParqueImg17,
+      vistaParqueImg18,
+      vistaParqueImg19,
+      vistaParqueImg20,
+      vistaParqueImg21,
+      vistaParqueImg22,
+      vistaParqueImg23,
+      vistaParqueImg24,
+      vistaParqueImg25
     ],
     featured: false
   },
