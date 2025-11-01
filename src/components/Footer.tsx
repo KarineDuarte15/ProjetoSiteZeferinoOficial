@@ -106,6 +106,17 @@ const Footer = () => {
 
         <div className="text-center font-poppins text-sm text-primary-foreground/60">
           <p>&copy; {new Date().getFullYear()} Zeferino. Todos os direitos reservados.</p>
+          <p className="text-sm text-primary-foreground/80"> {/* Aplica as mesmas classes */}
+               Desenvolvido por{' '}
+               <a
+                   href="https://site-karine-duarte-developer.vercel.app/" // Coloque o link correto aqui
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   className="underline hover:text-white transition-colors" // Estilo do link
+               >
+                   Karine Duarte Desenvolvedora
+               </a>
+          </p>
         </div>
       </div>
     </footer>

@@ -12,6 +12,7 @@ import { MessageCircle, X, Send, ArrowUp } from 'lucide-react'; // Ou seu ícone
 import Testimonials from "@/components/Testimonials";
 import Events from "@/components/Events";
 import whatsappLogo from '@/assets/WhatsApp.webp';
+import LearningEvents from "@/components/LearningEvents";
 import {
   Tooltip,
   TooltipContent,
@@ -138,6 +139,7 @@ return (
         const E: React.ComponentType<{ id: string }> = Events;
         return <E id="eventos" />;
       })()}
+      <LearningEvents id="networking" />
       {(() => {
         // Cast InstagramFeed so we can pass an id prop for anchor linking
         const I: React.ComponentType<{ id: string }> = InstagramFeed;
