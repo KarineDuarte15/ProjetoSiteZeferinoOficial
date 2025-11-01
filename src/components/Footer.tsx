@@ -1,124 +1,91 @@
-import { Key, Phone, Mail, MapPin, Instagram, Facebook, Linkedin } from "lucide-react";
-import { Separator } from "@/components/ui/separator";
-import logoHeader from "@/assets/logoheader.png";
+import { Phone, Mail, MapPin, Instagram, Linkedin } from "lucide-react";
+import logoHeader from "@/assets/hero-central.png";
+// O 'Separator' não é mais necessário aqui
+// import { Separator } from "@/components/ui/separator"; 
 
 const Footer = () => {
   return (
     <footer className="bg-primary text-primary-foreground py-16">
       <div className="container px-6 md:px-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
-          {/* Brand */}
-          <div>
-            <div className="flex items-center gap-2 mb-4">
+        
+        {/* --- DOCUMENTAÇÃO DA MUDANÇA ---
+          Trocamos o layout de Grid + Separator por um único container Flex.
+          - 'flex-col' empilha os itens no mobile.
+          - 'md:flex-row' alinha os itens horizontalmente no desktop.
+          - 'md:justify-between' distribui os itens (empurra o primeiro para a esquerda e o último para a direita).
+          - 'md:items-start' alinha todos os blocos pelo topo.
+        */}
+        <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-10">
+          
+{/* === GRUPO 1: Marca & Contatos === */}
+          {/* Este grupo é um flex para alinhar a logo ao lado dos contatos */}
+          <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
+
+            <div className="flex-shrink-0">
               <img 
-              src={logoHeader} 
-              alt="Zeferino Logo" 
-              className="w-16 h-16 logo-key" // Adicionamos a classe 'logo-key' para a animação
-            />
-              <h3 className="font-playfair text-3xl font-bold">Zeferino</h3>
+                src={logoHeader} // <-- TROQUE AQUI pelo seu novo logo
+                alt="Zeferino Logo" 
+                className="w-20" // Ajuste o tamanho (w-40) conforme o seu novo logo
+              />
             </div>
-            <p className="font-poppins text-primary-foreground/80 mb-4">
-              A chave para seu novo lar. Imóveis Exclusivos, com propósito e confiança.
-            </p>
-            <div className="flex gap-4">
-              <a 
-                href="https://instagram.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-                aria-label="Instagram"
-              >
-                <Instagram className="w-6 h-6" />
-              </a>
-              <a 
-                href="https://facebook.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-6 h-6" />
-              </a>
-              <a 
-                href="https://linkedin.com" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="hover:text-accent transition-colors"
-                aria-label="LinkedIn"
-              >
-                <Linkedin className="w-6 h-6" />
-              </a>
-            </div>
-          </div>
 
-          {/* Quick Links */}
-          <div>
-            <h4 className="font-montserrat text-sm uppercase tracking-wide mb-4 text-accent">
-              Links Rápidos
-            </h4>
-            <ul className="space-y-2 font-poppins">
-              <li>
-                <a href="#imoveis" className="hover:text-accent transition-colors">
-                  Imóveis
-                </a>
-              </li>
-              <li>
-                <a href="#sobre" className="hover:text-accent transition-colors">
-                  Sobre Liliana
-                </a>
-              </li>
-              <li>
-                <a href="#depoimentos" className="hover:text-accent transition-colors">
-                  Depoimentos
-                </a>
-              </li>
-              <li>
-                <a href="#contato" className="hover:text-accent transition-colors">
-                  Contato
-                </a>
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact */}
-          <div>
-            <h4 className="font-montserrat text-sm uppercase tracking-wide mb-4 text-accent">
-              Contato
-            </h4>
-            <ul className="space-y-3 font-poppins">
-              <li className="flex items-start gap-2">
-                <Phone className="w-5 h-5 mt-0.5 text-accent flex-shrink-0" />
+            {/* Contatos (Telefone & Email) 
+              Este é o "pequeno espaçamento" (gap-4) que você pediu.
+            */}
+            <ul className="space-y-2 font-poppins text-sm">
+              <li className="flex items-center gap-2">
+                <Phone className="w-5 h-5 text-accent flex-shrink-0" />
                 <span>(85) 99640-9590</span>
               </li>
-              <li className="flex items-start gap-2">
-                <Mail className="w-5 h-5 mt-0.5 text-accent flex-shrink-0" />
-                <span>contato@zeferino.com.br</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <MapPin className="w-5 h-5 mt-0.5 text-accent flex-shrink-0" />
-                <span>Fortaleza, CE</span>
+              <li className="flex items-center gap-2">
+                <Mail className="w-5 h-5 text-accent flex-shrink-0" />
+                {/* Email atualizado com base na sua imagem */}
+                <span>suporte@imoveiszeferino.com.br</span>
               </li>
             </ul>
-          </div>
-        </div>
+          </div> {/* Fim do Grupo 1 */}
 
-        <Separator className="bg-primary-foreground/20 mb-8" />
+          {/* === GRUPO 2: Ícones Sociais === */}
+          <div className="flex gap-4 justify-center"> {/* 'justify-center' para alinhar no mobile */}
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+              aria-label="Instagram"
+            >
+              <Instagram className="w-6 h-6" />
+            </a>
+            <a 
+              href="https://linkedin.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="hover:text-accent transition-colors"
+              aria-label="LinkedIn"
+            >
+              <Linkedin className="w-6 h-6" />
+            </a>
+          </div> {/* Fim do Grupo 2 */}
 
-        <div className="text-center font-poppins text-sm text-primary-foreground/60">
-          <p>&copy; {new Date().getFullYear()} Zeferino. Todos os direitos reservados.</p>
-          <p className="text-sm text-primary-foreground/80"> {/* Aplica as mesmas classes */}
-               Desenvolvido por{' '}
-               <a
-                   href="https://site-karine-duarte-developer.vercel.app/" // Coloque o link correto aqui
-                   target="_blank"
-                   rel="noopener noreferrer"
-                   className="underline hover:text-white transition-colors" // Estilo do link
-               >
-                   Karine Duarte Desenvolvedora
-               </a>
-          </p>
-        </div>
+          {/* === GRUPO 3: Copyright === */}
+          {/* 'text-center' no mobile, 'text-right' no desktop */}
+          <div className="font-poppins text-sm text-primary-foreground/60 text-center md:text-right">
+            {/* Ano 2025, como na sua imagem */}
+            <p>&copy; 2025 Zeferino. Todos os direitos reservados.</p>
+            <p className="text-sm text-primary-foreground/80">
+                 Desenvolvido por{' '}
+                 <a
+                     href="https://site-karine-duarte-developer.vercel.app/" 
+                     target="_blank"
+                     rel="noopener noreferrer"
+                     className="underline hover:text-white transition-colors"
+                 >
+                     Karine Duarte Desenvolvedora
+                 </a>
+            </p>
+          </div> {/* Fim do Grupo 3 */}
       </div>
+    </div>
     </footer>
   );
 };

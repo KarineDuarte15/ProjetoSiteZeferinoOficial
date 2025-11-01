@@ -11,19 +11,19 @@ const eventsData = [
   {
     id: 1,
     title: "Feirão Casa Nova Zeferino",
-    date: "25 DEZ 2024",
     location: "Centro de Convenções",
     description: "O maior feirão de imóveis do ano! Condições imperdíveis e lançamentos exclusivos. Venha realizar seu sonho.",
+    date: "em breve ",
     // Substitua esta URL por uma imagem importada
-    image: "https://images.unsplash.com/photo-1560518883-ce09059ee41f?w=800&h=600&fit=crop", 
+    image: "https://p2.trrsf.com/image/fget/cf/1548/0/images.terra.com/2022/09/29/425196786-casa-nova-dicas.jpg", 
     alt: "Pessoas em um feirão de imóveis",
   },
   {
     id: 2,
     title: "Workshop: Invista Certo",
-    date: "10 JAN 2025",
     location: "Online (Via Zoom)",
     description: "Aprenda com especialistas como investir em imóveis com segurança e rentabilidade. Vagas limitadas.",
+    date: "em breve",
     // Substitua esta URL por uma imagem importada
     image: "https://images.unsplash.com/photo-1542744095-291d1f67b221?w=800&h=600&fit=crop",
     alt: "Pessoa apresentando em um workshop",
@@ -31,9 +31,9 @@ const eventsData = [
   {
     id: 3,
     title: "Lançamento 'Vista Mar'",
-    date: "15 FEV 2025",
     location: "Stand de Vendas (Praia do Futuro)",
     description: "Venha conhecer o decorado do nosso mais novo empreendimento. Um coquetel especial espera por você.",
+    date: "em breve",
      // Substitua esta URL por uma imagem importada
     image: "https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=800&h=600&fit=crop",
     alt: "Prédio residencial de luxo",
@@ -102,7 +102,7 @@ const Events = () => {
                   asChild
                 >
                   {/* Você pode direcionar isso para um modal ou WhatsApp */}
-                  <a href="#contato">
+                  <a href={`whatsapp://send?text=Tenho%20interesse%20no%20evento%20${event.title}`} target="_blank" rel="noopener noreferrer">
                     Saiba Mais
                   </a>
                 </Button>
