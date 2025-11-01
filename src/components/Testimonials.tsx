@@ -22,32 +22,41 @@ interface Testimonial {
 import cliente1Img from '@/assets/testimonials/cliente1.jpg';
 import cliente2Img from '@/assets/testimonials/cliente2.jpg';
 import cliente3Img from '@/assets/testimonials/cliente3.jpg';
+import cliente4Img from '@/assets/testimonials/cliente4.jpg';
+import cliente5Img from '@/assets/testimonials/cliente5.png';
 
 const testimonialsData: Testimonial[] = [
   {
     id: 1,
-    name: "Cliente A",
-    text: "Experiência incrível! Encontrei o imóvel dos meus sonhos com um atendimento exclusivo e atencioso. Recomendo fortemente!",
+    name: "Diana e Diógenes",
+    text: "Oiiiii Liliana muito obrigada por me ajudar a realizar meu sonho, minha casa, Você foi essencial nessa etapa da minha vida, Super atenciosa, me mostrou as melhores opções que se encaixava com a minha realidade, me explicou cada passo, foi comigo em todos os lugares precisos, e me auxíliou. Atendimento impecável, E hoje estou com a chave da minha casa, Que Deus te abençoe sempre.",
     imageUrl: cliente1Img, 
   },
   {
     id: 2,
-    name: "Cliente B",
-    text: "Todo o processo foi muito tranquilo e sem burocracia. Profissionalismo e confiança do início ao fim.",
+    name: "Vitor e Carol",
+    text: "Todo o processo está sendo muito tranquilo e sem burocracia. Profissionalismo e confiança do início ao fim, Preciso dizer muito obrigada por sempre me tratar tão bem e ser uma profissional e amiga, tá ajudando bastante.",
     imageUrl: cliente2Img, 
   },
   {
     id: 3,
-    name: "Cliente C",
+    name: "Bianca Francklin",
     text: "Superou minhas expectativas! Atenção aos detalhes e um cuidado genuíno em encontrar o lugar perfeito para minha família.",
     imageUrl: cliente3Img,
   },
    { // Adicionando mais um para testar o carrossel
     id: 4,
-    name: "Cliente D",
-    text: "Serviço diferenciado. Senti que minhas necessidades foram realmente compreendidas. Muito feliz com a minha nova casa!",
-    imageUrl: "https://via.placeholder.com/100x100/bbbbbb/969696?text=Foto", // Placeholder
+    name: "Francisca Duarte",
+    text: "Serviço diferenciado. Senti que minhas necessidades foram realmente compreendidas,Experiência incrível! Encontrei o imóvel dos meus sonhos com um atendimento exclusivo e atencioso, Recomendo fortemente, Muito feliz com a minha nova casa!",
+    imageUrl: cliente5Img,
   },
+     { // Adicionando mais um para testar o carrossel
+    id: 5,
+    name: "Lia",
+    text: "Eu adorei o atendimento, me deixou segura e confiante atenção as minhas demandas foram essenciais, me mostrou algumas possibilidades de compra, tirou todas as minhas dúvidas e me orientou com muito cuidado em cada detalhe da escolha. Uma experiência leve e segura do início ao atual momento que só finaliza com minhas chaves na mão mas que tenho certeza que permanecerá assim",
+    imageUrl: cliente4Img,
+  },
+
   // Adicione mais depoimentos aqui...
 ];
 
