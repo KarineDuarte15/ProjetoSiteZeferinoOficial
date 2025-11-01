@@ -48,7 +48,7 @@ const Footer = () => {
           {/* === GRUPO 2: Ícones Sociais === */}
           <div className="flex gap-4 justify-center"> {/* 'justify-center' para alinhar no mobile */}
             <a 
-              href="https://instagram.com" 
+              href="https://www.instagram.com/lilianacorretora/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"
@@ -57,7 +57,7 @@ const Footer = () => {
               <Instagram className="w-6 h-6" />
             </a>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/lilianazeferinoimoveissemburocracia/" 
               target="_blank" 
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"

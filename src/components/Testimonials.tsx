@@ -29,7 +29,7 @@ const testimonialsData: Testimonial[] = [
   {
     id: 1,
     name: "Diana e Diógenes",
-    text: "Oiiiii Liliana muito obrigada por me ajudar a realizar meu sonho, minha casa, Você foi essencial nessa etapa da minha vida, Super atenciosa, me mostrou as melhores opções que se encaixava com a minha realidade, me explicou cada passo, foi comigo em todos os lugares precisos, e me auxíliou. Atendimento impecável, E hoje estou com a chave da minha casa, Que Deus te abençoe sempre.",
+    text: "Só tenho a agradecer por me ajudar a realizar meu sonho, minha casa, Você foi essencial nessa etapa da minha vida, Super atenciosa, me mostrou as melhores opções que se encaixava com a minha realidade, me explicou cada passo, foi comigo em todos os lugares precisos, e me auxíliou. Atendimento impecável, E hoje estou com a chave da minha casa, Que Deus te abençoe sempre.",
     imageUrl: cliente1Img, 
   },
   {
