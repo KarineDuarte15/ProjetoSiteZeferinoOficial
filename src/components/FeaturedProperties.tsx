@@ -174,26 +174,26 @@ import vistaParqueImg25 from "@/assets/vistaparque/img25.jpg";
 
 //.......................................................
 //vitória acácia 
-import vitóriaAcáciaImg1 from "@/assets/vitoria-acacia/img1.jpg";
-import vitóriaAcáciaImg2 from "@/assets/vitoria-acacia/img2.jpg";
-import vitóriaAcáciaImg3 from "@/assets/vitoria-acacia/img3.jpg";
-import vitóriaAcáciaImg4 from "@/assets/vitoria-acacia/img4.jpg";
-import vitóriaAcáciaImg5 from "@/assets/vitoria-acacia/img5.jpg";
-import vitóriaAcáciaImg6 from "@/assets/vitoria-acacia/img6.jpg";
-import vitóriaAcáciaImg7 from "@/assets/vitoria-acacia/img7.jpg";
-import vitóriaAcáciaImg8 from "@/assets/vitoria-acacia/img8.jpg";
-import vitóriaAcáciaImg9 from "@/assets/vitoria-acacia/img9.jpg";
-import vitóriaAcáciaImg10 from "@/assets/vitoria-acacia/img10.jpg";
-import vitóriaAcáciaImg11 from "@/assets/vitoria-acacia/img11.jpg";
-import vitóriaAcáciaImg12 from "@/assets/vitoria-acacia/img12.jpg";
-import vitóriaAcáciaImg13 from "@/assets/vitoria-acacia/img13.jpg";
-import vitóriaAcáciaImg14 from "@/assets/vitoria-acacia/img14.jpg";
-import vitóriaAcáciaImg15 from "@/assets/vitoria-acacia/img15.jpg";
-import vitóriaAcáciaImg16 from "@/assets/vitoria-acacia/img16.jpg";
-import vitóriaAcáciaImg17 from "@/assets/vitoria-acacia/img17.jpg";
-import vitóriaAcáciaImg18 from "@/assets/vitoria-acacia/img18.jpg";
-import vitóriaAcáciaImg19 from "@/assets/vitoria-acacia/img19.jpg";
-import vitóriaAcáciaImg20 from "@/assets/vitoria-acacia/img20.jpg";
+import vitóriaAcáciaImg1 from "@/assets/vitoriaacacia/img1.jpg";
+import vitóriaAcáciaImg2 from "@/assets/vitoriaacacia/img2.jpg";
+import vitóriaAcáciaImg3 from "@/assets/vitoriaacacia/img3.jpg";
+import vitóriaAcáciaImg4 from "@/assets/vitoriaacacia/img4.jpg";
+import vitóriaAcáciaImg5 from "@/assets/vitoriaacacia/img5.jpg";
+import vitóriaAcáciaImg6 from "@/assets/vitoriaacacia/img6.jpg";
+import vitóriaAcáciaImg7 from "@/assets/vitoriaacacia/img7.jpg";
+import vitóriaAcáciaImg8 from "@/assets/vitoriaacacia/img8.jpg";
+import vitóriaAcáciaImg9 from "@/assets/vitoriaacacia/img9.jpg";
+import vitóriaAcáciaImg10 from "@/assets/vitoriaacacia/img10.jpg";
+import vitóriaAcáciaImg11 from "@/assets/vitoriaacacia/img11.jpg";
+import vitóriaAcáciaImg12 from "@/assets/vitoriaacacia/img12.jpg";
+import vitóriaAcáciaImg13 from "@/assets/vitoriaacacia/img13.jpg";
+import vitóriaAcáciaImg14 from "@/assets/vitoriaacacia/img14.jpg";
+import vitóriaAcáciaImg15 from "@/assets/vitoriaacacia/img15.jpg";
+import vitóriaAcáciaImg16 from "@/assets/vitoriaacacia/img16.jpg";
+import vitóriaAcáciaImg17 from "@/assets/vitoriaacacia/img17.jpg";
+import vitóriaAcáciaImg18 from "@/assets/vitoriaacacia/img18.jpg";
+import vitóriaAcáciaImg19 from "@/assets/vitoriaacacia/img19.jpg";
+import vitóriaAcáciaImg20 from "@/assets/vitoriaacacia/img20.jpg";
 //.......................................................
 //vitória eusébio 
 import vitóriaEusébioImg1 from "@/assets/vitoriaeusebio/img1.jpg";
