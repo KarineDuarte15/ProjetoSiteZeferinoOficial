@@ -80,16 +80,6 @@ const PropertyCategories: React.FC<PropertyCategoriesProps> = ({ onCategorySelec
           </p>
         </div>
 
-        {/* 4. Botão para "Limpar Filtro" (Mostrar Todos) */}
-        <div className="flex justify-center mb-8">
-            <Button
-              variant={!selectedCategory ? "default" : "outline"} // Destaca se "Todos" estiver selecionado
-              onClick={() => onCategorySelect(null)} // Envia "null" para mostrar todos
-              className="font-montserrat uppercase"
-            >
-              Mostrar Todas as Propriedades
-            </Button>
-        </div>
 
         {/* 5. Grid de Categorias (agora interativo) */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">

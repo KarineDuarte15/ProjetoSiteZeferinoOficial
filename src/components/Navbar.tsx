@@ -19,7 +19,6 @@ const Navbar: React.FC<NavbarProps> = ({ onContactClick }) => {
     { name: "Início", href: "#inicio" },
     { name: "Imóveis", href: "#imoveis" },
     { name: "Sobre", href: "#sobre-mim" },
-    { name: "Instagram", href: "#instagram" },
     { name: "Eventos", href: "#eventos" },
     { name: "Depoimentos", href: "#depoimentos" },
     { name: "Contato", href: "#ContactModal" }, // Este é especial
